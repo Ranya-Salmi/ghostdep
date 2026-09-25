@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "ghostdep": {
+      "command": "D:\\ghostdep\\.venv\\Scripts\\python.exe",
+      "args": [
+        "-m",
+        "ghostdep.server"
+      ],
+      "cwd": "D:\\ghostdep"
+    }
+  }
+}

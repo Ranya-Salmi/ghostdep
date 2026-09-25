@@ -151,3 +151,24 @@ def test_empty_top_list_skips_check():
     with _patch_list("pypi", []):
         finding = check_typosquat("reqeusts", "pypi", 0, _new())
     assert finding is None
+
+# ---------------------------------------------------------------------------
+# OSA (optimal string alignment) — adjacent-letter transposition = distance 1
+# ---------------------------------------------------------------------------
+
+def test_osa_transposition_flaks_is_blocked():
+    """'flaks' is a transposition of 'flask' — OSA distance 1 → BLOCKED."""
+    with _patch_list("pypi", ["flask"]):
+        finding = check_typosquat("flaks", "pypi", 0, _new())
+    assert finding is not None
+    assert finding.severity == Severity.BLOCKED
+    assert "flask" in finding.suggestion
+
+
+def test_osa_transposition_reqeusts_is_blocked():
+    """'reqeusts' has adjacent swap 'eu'→'ue' in 'requests'; OSA distance 2 → BLOCKED."""
+    with _patch_list("pypi", ["requests"]):
+        finding = check_typosquat("reqeusts", "pypi", 0, _new())
+    assert finding is not None
+    assert finding.severity == Severity.BLOCKED
+

@@ -23,7 +23,7 @@ from functools import lru_cache
 from pathlib import Path
 from typing import Optional
 
-from rapidfuzz.distance import Levenshtein
+from rapidfuzz.distance import OSA
 
 from ghostdep.constants import MIN_AGE_DAYS, NPM_MIN_DOWNLOADS_WEEK, PYPI_MIN_DOWNLOADS_MONTH, TOP_LIST_SIZE
 from ghostdep.verdict import Finding, Severity
@@ -81,7 +81,7 @@ def check_typosquat(
     best_match: Optional[str] = None
 
     for orig, norm in zip(top_list, top_normalised):
-        dist = Levenshtein.distance(normalised, norm)
+        dist = OSA.distance(normalised, norm)
         if 0 < dist <= threshold:
             if dist < best_dist:
                 best_dist = dist

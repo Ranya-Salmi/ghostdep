@@ -1,0 +1,28 @@
+{
+  "registry": {
+    "info": {
+      "name": "requests",
+      "version": "2.32.3",
+      "summary": "Python HTTP for Humans."
+    },
+    "releases": {
+      "0.2.0": [
+        {"upload_time": "2011-02-14T17:00:00", "filename": "requests-0.2.0.tar.gz"}
+      ],
+      "2.32.3": [
+        {"upload_time": "2024-05-29T15:00:00", "filename": "requests-2.32.3-py3-none-any.whl"},
+        {"upload_time": "2024-05-29T15:01:00", "filename": "requests-2.32.3.tar.gz"}
+      ]
+    }
+  },
+  "pypistats": {
+    "data": {
+      "last_month": 250000000
+    }
+  },
+  "osv": {
+    "2.32.3": {
+      "vulns": []
+    }
+  }
+}

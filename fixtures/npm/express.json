@@ -1,0 +1,28 @@
+{
+  "registry": {
+    "name": "express",
+    "dist-tags": {"latest": "4.19.2"},
+    "time": {
+      "created": "2010-12-29T19:39:24.173Z",
+      "modified": "2024-03-25T00:00:00.000Z",
+      "4.19.2": "2024-03-25T00:00:00.000Z"
+    },
+    "versions": {
+      "4.19.2": {
+        "name": "express",
+        "version": "4.19.2"
+      }
+    }
+  },
+  "downloads": {
+    "downloads": 35000000,
+    "package": "express",
+    "start": "2024-05-01",
+    "end": "2024-05-07"
+  },
+  "osv": {
+    "4.19.2": {
+      "vulns": []
+    }
+  }
+}

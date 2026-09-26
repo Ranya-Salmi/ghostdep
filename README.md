@@ -1,4 +1,6 @@
-# GhostDep
+<p align="center"><img src="docs/icon.svg" width="96" height="96" alt="GhostDep icon"></p>
+
+<h1 align="center">GhostDep</h1>
 
 > **Security guard that stops AI coding agents from installing hallucinated, typosquatted, or vulnerable packages.**
 

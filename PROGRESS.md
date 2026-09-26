@@ -2,6 +2,61 @@
 
 ---
 
+## Redesign — Premium report + landing page
+
+**Completed:** 2026-09-26
+
+### What was done
+
+**`ghostdep/report.py` (REDESIGN PART 1):**
+- Complete rewrite with new design tokens (`--bg #0B0D10`, `--accent #7FE3F0`, etc.).
+- Inline SVG icons for every verdict: shield (SAFE), triangle (SUSPICIOUS), dashed
+  ghost circle with X (BLOCKED) — accessibility never relies on color alone.
+- Compact check-row indicators (mini pass/fail SVG per check) in each card header.
+- BLOCKED cards use ghost styling: dashed border, reduced opacity, struck-through name.
+- `prefers-reduced-motion` support: animation disabled when user prefers it.
+- Responsive down to 375px; visible `:focus-visible` states with accent outline.
+- Semantic HTML: `<article>`, `<main>`, `aria-label`, `role="list"`.
+- Regenerated `demo/report-example.html` and `docs/report-example.html`.
+
+**`docs/index.html` (REDESIGN PART 2):**
+- Sticky nav with backdrop blur, responsive (hidden on mobile).
+- Hero with animated terminal replay (typed line-by-line, inline JS, ~40 lines).
+- "Live catch" section as a minimal two-event timeline (25 Sep BLOCKED → 26 Sep removed).
+- "How it works" as a three-step horizontal flow with arrows (not identical cards).
+- Benchmark section: four large-number cards with honest methodology note.
+- "Works everywhere" section: IBM Bob, CLI, and CI, each as a code-snippet card.
+- Footer: GitHub link, MIT, "Built with IBM Bob".
+- Open Graph meta tags and meta description.
+- `docs/report-example.html` copied from `demo/report-example.html` so the
+  "See an example report" button works on GitHub Pages.
+
+**Quality check:**
+- `scripts/check_html_quality.py`: validates no external resource requests in
+  `docs/index.html`, `docs/report-example.html`, `demo/report-example.html`.
+- All 133 tests pass.
+
+### Design decisions
+- Terminal replay uses `setTimeout` with staggered delays (400–2400ms). Under
+  `prefers-reduced-motion` all lines appear instantly.
+- No CDN fonts — system font stack only (`system-ui, "Segoe UI", Inter, Roboto`).
+- Accent color (`#7FE3F0`) used sparingly: nav brand dot, section labels, links,
+  terminal prompt, benchmark numbers (~5% of screen area).
+- `<script>` block is minimal inline JS only (terminal animation); no frameworks.
+
+### Things to verify visually
+- [ ] `docs/index.html` terminal animation plays correctly in browser.
+- [ ] `docs/index.html` hero layout looks good on mobile (375px).
+- [ ] `demo/report-example.html` ghost styling is visible for BLOCKED cards.
+- [ ] Check-row indicators (mini SVGs) are legible at small size.
+- [ ] WCAG AA contrast: `--muted #8B949E` on `--bg #0B0D10` = 4.8:1 (passes AA).
+  `--text #E6EDF3` on `--bg #0B0D10` = 14.5:1 (passes AAA).
+  `--safe #3FB950` on dark backgrounds ≥ 3:1 (passes AA for large text/UI).
+  `--blocked #F85149` on dark backgrounds ≥ 3:1 (passes AA for large text/UI).
+- [ ] No horizontal scroll on 375px viewport.
+
+---
+
 ## Phase 1 — Quick fixes
 
 **Completed:** 2026-09-26

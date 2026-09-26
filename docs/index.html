@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="GhostDep stops AI coding agents from installing packages that don't exist — hallucinated or typosquatted dependencies caught before pip install runs.">
+<meta property="og:title" content="GhostDep — Stop AI agents from installing ghost packages">
+<meta property="og:description" content="Five deterministic checks. Zero installs of hallucinated or typosquatted packages. Works with IBM Bob, CLI, and GitHub Actions.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ghostdep.github.io/ghostdep/">
+<title>GhostDep — Stop AI agents from installing packages that don't exist</title>
+<style>
+/* ── Design tokens ─────────────────────── */
+:root {
+  --bg:        #0B0D10;
+  --surface:   #12151A;
+  --surface-2: #181C22;
+  --border:    #232931;
+  --text:      #E6EDF3;
+  --muted:     #8B949E;
+  --accent:    #7FE3F0;
+  --safe:      #3FB950;
+  --suspicious:#D29922;
+  --blocked:   #F85149;
+  --mono: ui-monospace, "Cascadia Code", "JetBrains Mono", Consolas, monospace;
+  --sans: system-ui, -apple-system, "Segoe UI", Inter, Roboto, sans-serif;
+  --space: 8px;
+  --max: 900px;
+}
+
+/* ── Reset + base ───────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+code, pre {
+  font-family: var(--mono);
+}
+
+/* ── Nav ────────────────────────────────── */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(11,13,16,0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  padding: calc(var(--space)*1.5) calc(var(--space)*3);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: calc(var(--space)*2);
+}
+.nav-brand {
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  text-decoration: none;
+}
+.nav-brand .dot { color: var(--accent); }
+.nav-links {
+  display: flex;
+  gap: calc(var(--space)*3);
+  list-style: none;
+}
+.nav-links a {
+  font-size: 0.875rem;
+  color: var(--muted);
+  transition: color 160ms;
+}
+.nav-links a:hover { color: var(--text); text-decoration: none; }
+
+/* ── Sections ───────────────────────────── */
+section { padding: calc(var(--space)*12) calc(var(--space)*3); }
+section + section { border-top: 1px solid var(--border); }
+
+.inner { max-width: var(--max); margin: 0 auto; }
+
+.section-label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  margin-bottom: calc(var(--space)*2);
+}
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+  margin-bottom: calc(var(--space)*2);
+}
+.section-body {
+  font-size: 0.95rem;
+  color: var(--muted);
+  max-width: 620px;
+  line-height: 1.7;
+}
+
+/* ── Hero ───────────────────────────────── */
+#hero {
+  padding-top: calc(var(--space)*18);
+  padding-bottom: calc(var(--space)*14);
+}
+.hero-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: calc(var(--space)*8);
+  align-items: center;
+}
+.hero-headline {
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+  margin-bottom: calc(var(--space)*3);
+}
+.hero-headline .hl { color: var(--accent); }
+.hero-sub {
+  font-size: 1.05rem;
+  color: var(--muted);
+  margin-bottom: calc(var(--space)*5);
+  line-height: 1.7;
+  max-width: 480px;
+}
+.hero-buttons {
+  display: flex;
+  gap: calc(var(--space)*2);
+  flex-wrap: wrap;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0.6rem 1.4rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: opacity 160ms, background 160ms;
+  border: 1px solid transparent;
+}
+.btn:hover { opacity: 0.85; text-decoration: none; }
+.btn-primary {
+  background: var(--accent);
+  color: #0B0D10;
+  border-color: var(--accent);
+}
+.btn-secondary {
+  background: transparent;
+  color: var(--text);
+  border-color: var(--border);
+}
+.btn-secondary:hover { background: var(--surface); }
+
+/* ── Terminal replay ─────────────────────── */
+.terminal {
+  background: #0d1117;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+  font-family: var(--mono);
+  font-size: 0.82rem;
+}
+.terminal-bar {
+  background: var(--surface-2);
+  border-bottom: 1px solid var(--border);
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.dot-r { width:10px;height:10px;border-radius:50%;background:#F85149;display:inline-block; }
+.dot-y { width:10px;height:10px;border-radius:50%;background:#D29922;display:inline-block; }
+.dot-g { width:10px;height:10px;border-radius:50%;background:#3FB950;display:inline-block; }
+.terminal-body { padding: 16px 18px; min-height: 160px; color: #E6EDF3; }
+
+.t-prompt { color: var(--accent); }
+.t-cmd    { color: var(--text); }
+.t-blocked{ color: var(--blocked); font-weight: 700; }
+.t-bullet { color: var(--muted); }
+.t-arrow  { color: var(--accent); }
+.t-line   { display: block; margin-bottom: 2px; }
+.t-line.hidden { visibility: hidden; }
+
+/* ── Live catch ─────────────────────────── */
+.timeline {
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+  position: relative;
+  padding-top: calc(var(--space)*2);
+}
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 20px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: var(--border);
+}
+.timeline-events {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--space)*5);
+  width: 100%;
+}
+.timeline-event {
+  display: flex;
+  gap: calc(var(--space)*3);
+  align-items: flex-start;
+  position: relative;
+}
+.t-dot {
+  width: 40px;
+  min-width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--border);
+  background: var(--surface);
+  position: relative;
+  z-index: 1;
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+.t-dot.blocked { border-color: var(--blocked); background: rgba(248,81,73,0.1); }
+.t-dot.gone    { border-color: var(--muted); }
+.t-event-content { padding-top: 6px; }
+.t-date { font-size: 0.78rem; color: var(--muted); font-family: var(--mono); margin-bottom: 4px; }
+.t-desc { font-size: 0.95rem; color: var(--text); }
+.t-tag {
+  display: inline-block;
+  padding: 0.15rem 0.55rem;
+  border-radius: 4px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-left: 6px;
+  vertical-align: middle;
+}
+.t-tag.blocked { background: rgba(248,81,73,0.12); color: var(--blocked); border: 1px solid rgba(248,81,73,0.3); }
+.t-tag.removed { background: rgba(139,148,158,0.12); color: var(--muted); border: 1px solid rgba(139,148,158,0.3); }
+
+/* ── How it works ───────────────────────── */
+.flow {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  flex-wrap: wrap;
+  margin-top: calc(var(--space)*5);
+}
+.flow-step {
+  flex: 1 1 180px;
+  padding: calc(var(--space)*3);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  position: relative;
+}
+.flow-num {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  margin-bottom: calc(var(--space)*1);
+}
+.flow-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: calc(var(--space)*1);
+}
+.flow-desc { font-size: 0.82rem; color: var(--muted); }
+.flow-arrow {
+  font-size: 1.2rem;
+  color: var(--border);
+  padding: 0 calc(var(--space)*2);
+  flex-shrink: 0;
+  align-self: center;
+}
+
+/* ── Benchmark ──────────────────────────── */
+.bench-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: calc(var(--space)*2);
+  margin-top: calc(var(--space)*5);
+}
+.bench-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: calc(var(--space)*3);
+  text-align: center;
+}
+.bench-num {
+  font-size: 2.4rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  color: var(--accent);
+  margin-bottom: calc(var(--space)*1);
+}
+.bench-label { font-size: 0.8rem; color: var(--muted); }
+.bench-note {
+  margin-top: calc(var(--space)*3);
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+
+/* ── Works everywhere ───────────────────── */
+.integrations {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--space)*4);
+  margin-top: calc(var(--space)*5);
+}
+.integration {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.int-header {
+  background: var(--surface-2);
+  border-bottom: 1px solid var(--border);
+  padding: calc(var(--space)*2) calc(var(--space)*3);
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: calc(var(--space)*2);
+}
+.int-tag {
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  background: rgba(127,227,240,0.1);
+  color: var(--accent);
+  border: 1px solid rgba(127,227,240,0.25);
+}
+.int-body {
+  padding: calc(var(--space)*2) calc(var(--space)*3);
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+pre.code-block {
+  background: #0d1117;
+  border-radius: 6px;
+  padding: calc(var(--space)*2);
+  overflow-x: auto;
+  font-size: 0.8rem;
+  line-height: 1.6;
+  color: var(--text);
+  margin-top: calc(var(--space)*2);
+}
+.c-comment { color: var(--muted); }
+.c-key     { color: var(--accent); }
+.c-str     { color: #a8daff; }
+.c-num     { color: #f2cc60; }
+.c-cmd     { color: var(--safe); }
+.c-flag    { color: #ffb86c; }
+
+/* ── Footer ─────────────────────────────── */
+footer.site-footer {
+  border-top: 1px solid var(--border);
+  padding: calc(var(--space)*6) calc(var(--space)*3);
+  text-align: center;
+  font-size: 0.82rem;
+  color: var(--muted);
+  line-height: 2;
+}
+
+/* ── Motion ─────────────────────────────── */
+@media (prefers-reduced-motion: no-preference) {
+  .flow-step, .bench-card, .integration {
+    animation: fadeUp 250ms ease both;
+  }
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Responsive ─────────────────────────── */
+@media (max-width: 700px) {
+  .hero-inner { grid-template-columns: 1fr; }
+  .hero-headline { font-size: 2.2rem; }
+  .flow-arrow { display: none; }
+  .flow { flex-direction: column; }
+  .flow-step { flex: none; width: 100%; }
+  .nav-links { display: none; }
+}
+@media (max-width: 400px) {
+  .hero-headline { font-size: 1.8rem; }
+  section { padding: calc(var(--space)*8) calc(var(--space)*2); }
+}
+</style>
+</head>
+<body>
+
+<!-- ── Nav ── -->
+<nav class="nav" aria-label="Site navigation">
+  <a href="#" class="nav-brand">Ghost<span class="dot">.</span>Dep</a>
+  <ul class="nav-links">
+    <li><a href="#live-catch">Live catch</a></li>
+    <li><a href="#how-it-works">How it works</a></li>
+    <li><a href="#benchmark">Benchmark</a></li>
+    <li><a href="#integrations">Works everywhere</a></li>
+    <li><a href="https://github.com/ghostdep/ghostdep">GitHub</a></li>
+  </ul>
+</nav>
+
+<!-- ── Hero ── -->
+<section id="hero" aria-labelledby="hero-headline">
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <h1 class="hero-headline" id="hero-headline">
+        Stop AI agents from installing packages that<br>
+        <span class="hl">don't exist.</span>
+      </h1>
+      <p class="hero-sub">
+        AI coding agents hallucinate package names. Attackers publish typosquats
+        that vanish hours later. GhostDep intercepts every <code>pip install</code>
+        before it runs and blocks ghost packages before they touch your environment.
+      </p>
+      <div class="hero-buttons">
+        <a href="https://github.com/ghostdep/ghostdep" class="btn btn-primary">View on GitHub</a>
+        <a href="report-example.html" class="btn btn-secondary">See an example report</a>
+      </div>
+    </div>
+
+    <!-- Terminal replay -->
+    <div class="terminal" role="region" aria-label="Terminal demo">
+      <div class="terminal-bar" aria-hidden="true">
+        <span class="dot-r"></span>
+        <span class="dot-y"></span>
+        <span class="dot-g"></span>
+      </div>
+      <div class="terminal-body" id="terminal-output" aria-live="polite">
+        <!-- lines injected by JS -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Live catch ── -->
+<section id="live-catch" aria-labelledby="live-catch-title">
+  <div class="inner">
+    <p class="section-label">The live catch</p>
+    <h2 class="section-title" id="live-catch-title">Caught in the wild</h2>
+    <p class="section-body">
+      On 25 Sep 2026, GhostDep returned BLOCKED for <code>reqeusts</code> — a package
+      first published three days earlier with five downloads, closely resembling
+      <code>requests</code>. By the following day it was no longer on PyPI.
+    </p>
+    <div class="timeline" style="margin-top:2rem" role="list">
+      <div class="timeline-events">
+        <div class="timeline-event" role="listitem">
+          <div class="t-dot blocked" aria-label="Blocked">!</div>
+          <div class="t-event-content">
+            <div class="t-date">25 Sep 2026</div>
+            <div class="t-desc">
+              GhostDep returns BLOCKED for <code>reqeusts</code>
+              <span class="t-tag blocked">BLOCKED</span>
+              <br>
+              <small style="color:var(--muted);font-size:0.82rem">
+                First published 3 days earlier · 5 downloads · edit distance 2 from <code>requests</code>
+              </small>
+            </div>
+          </div>
+        </div>
+        <div class="timeline-event" role="listitem">
+          <div class="t-dot gone" aria-label="Removed">✕</div>
+          <div class="t-event-content">
+            <div class="t-date">26 Sep 2026</div>
+            <div class="t-desc">
+              <code>reqeusts</code> no longer available on PyPI
+              <span class="t-tag removed">REMOVED</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── How it works ── -->
+<section id="how-it-works" aria-labelledby="how-title">
+  <div class="inner">
+    <p class="section-label">How it works</p>
+    <h2 class="section-title" id="how-title">Five checks, one verdict</h2>
+    <p class="section-body">
+      GhostDep runs five deterministic checks in order.
+      The first failure wins; a BLOCKED verdict stops the install immediately.
+    </p>
+    <div class="flow" role="list">
+      <div class="flow-step" role="listitem">
+        <div class="flow-num">Step 1</div>
+        <div class="flow-title">Agent requests a package</div>
+        <div class="flow-desc">
+          An AI agent generates a <code>pip install</code> command — could be a
+          hallucinated name, a typo, or a real package.
+        </div>
+      </div>
+      <div class="flow-arrow" aria-hidden="true">→</div>
+      <div class="flow-step" role="listitem">
+        <div class="flow-num">Step 2</div>
+        <div class="flow-title">GhostDep runs 5 checks</div>
+        <div class="flow-desc">
+          Existence · Age · Popularity · Typosquatting (OSA distance vs top-5,000) ·
+          Vulnerabilities (OSV). Each check returns SAFE, SUSPICIOUS, or BLOCKED.
+        </div>
+      </div>
+      <div class="flow-arrow" aria-hidden="true">→</div>
+      <div class="flow-step" role="listitem">
+        <div class="flow-num">Step 3</div>
+        <div class="flow-title">Bob installs only what's safe</div>
+        <div class="flow-desc">
+          SAFE → install proceeds. SUSPICIOUS → flagged for review.
+          BLOCKED → install refused; agent picks a real alternative.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Benchmark ── -->
+<section id="benchmark" aria-labelledby="bench-title">
+  <div class="inner">
+    <p class="section-label">Benchmark</p>
+    <h2 class="section-title" id="bench-title">Numbers that matter</h2>
+    <p class="section-body">
+      Run on 2026-09-26 against 75 packages across four categories using the live PyPI
+      registry. All names and results are fully reproducible (seed 42).
+    </p>
+    <div class="bench-grid">
+      <div class="bench-card">
+        <div class="bench-num">100%</div>
+        <div class="bench-label">Detection rate<br>(typosquats + hallucinated)</div>
+      </div>
+      <div class="bench-card">
+        <div class="bench-num">0%</div>
+        <div class="bench-label">False-positive rate<br>(popular + mid-popularity)</div>
+      </div>
+      <div class="bench-card">
+        <div class="bench-num">3/3</div>
+        <div class="bench-label">Historical attacks<br>detected (replay)</div>
+      </div>
+      <div class="bench-card">
+        <div class="bench-num">75</div>
+        <div class="bench-label">Packages tested<br>across 4 categories</div>
+      </div>
+    </div>
+    <p class="bench-note">
+      Historical attacks (colourama, python3-dateutil, jeIlyfish) are simulated replays —
+      those packages no longer exist on PyPI and are tested via the typosquat check directly.
+      Full methodology and per-package results:
+      <a href="https://github.com/ghostdep/ghostdep/blob/master/benchmark/RESULTS.md">benchmark/RESULTS.md</a>
+    </p>
+  </div>
+</section>
+
+<!-- ── Works everywhere ── -->
+<section id="integrations" aria-labelledby="int-title">
+  <div class="inner">
+    <p class="section-label">Works everywhere</p>
+    <h2 class="section-title" id="int-title">One tool, three surfaces</h2>
+    <p class="section-body">
+      GhostDep plugs in at the exact moment a package name is chosen — whether that's
+      inside an AI agent, a CI pipeline, or the command line.
+    </p>
+    <div class="integrations">
+
+      <!-- IBM Bob -->
+      <div class="integration">
+        <div class="int-header">
+          <span>IBM Bob (MCP server + skill + custom mode)</span>
+          <span class="int-tag">AI agent</span>
+        </div>
+        <div class="int-body">
+          Register as an MCP server via <strong>Bob Settings → MCP → +</strong>
+          (project scope), then activate the <strong>Dependency Guardian</strong> mode
+          or the <strong>ghostdep-guard</strong> skill. Bob calls
+          <code>check_package()</code> automatically before every install.
+          <pre class="code-block"><span class="c-comment">// Bob MCP config (project scope)</span>
+{
+  <span class="c-key">"mcpServers"</span>: {
+    <span class="c-key">"ghostdep"</span>: {
+      <span class="c-key">"command"</span>: <span class="c-str">"path/to/.venv/Scripts/python.exe"</span>,
+      <span class="c-key">"args"</span>: [<span class="c-str">"-m"</span>, <span class="c-str">"ghostdep.server"</span>],
+      <span class="c-key">"cwd"</span>: <span class="c-str">"path/to/ghostdep"</span>
+    }
+  }
+}</pre>
+        </div>
+      </div>
+
+      <!-- CLI -->
+      <div class="integration">
+        <div class="int-header">
+          <span>CLI — check a single package or scan a whole file</span>
+          <span class="int-tag">Command line</span>
+        </div>
+        <div class="int-body">
+          <pre class="code-block"><span class="c-comment"># Check one package</span>
+<span class="c-cmd">ghostdep check</span> reqeusts
+
+<span class="c-comment"># Scan requirements.txt — exits 2 if any BLOCKED</span>
+<span class="c-cmd">ghostdep scan</span> requirements.txt
+
+<span class="c-comment"># Generate a self-contained HTML report</span>
+<span class="c-cmd">ghostdep report</span> requirements.txt <span class="c-flag">--output</span> report.html
+
+<span class="c-comment"># Watch the live PyPI feed for new typosquats</span>
+<span class="c-cmd">ghostdep scan-new</span></pre>
+        </div>
+      </div>
+
+      <!-- CI -->
+      <div class="integration">
+        <div class="int-header">
+          <span>GitHub Actions CI gate</span>
+          <span class="int-tag">CI/CD</span>
+        </div>
+        <div class="int-body">
+          Scans every PR that touches <code>requirements.txt</code> or
+          <code>pyproject.toml</code>, uploads SARIF to the GitHub Security tab,
+          and fails the job on BLOCKED packages.
+          <pre class="code-block"><span class="c-comment"># .github/workflows/ghostdep.yml</span>
+<span class="c-key">on:</span>
+  <span class="c-key">pull_request:</span>
+    <span class="c-key">paths:</span> [<span class="c-str">"requirements.txt"</span>, <span class="c-str">"pyproject.toml"</span>]
+
+<span class="c-key">jobs:</span>
+  <span class="c-key">ghostdep-scan:</span>
+    <span class="c-key">runs-on:</span> ubuntu-latest
+    <span class="c-key">steps:</span>
+      <span class="c-key">- uses:</span> actions/checkout@v4
+      <span class="c-key">- run:</span> <span class="c-str">ghostdep scan requirements.txt --format sarif &gt; ghostdep.sarif</span>
+      <span class="c-key">- uses:</span> github/codeql-action/upload-sarif@v3
+        <span class="c-key">with:</span>
+          <span class="c-key">sarif_file:</span> ghostdep.sarif</pre>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── Site footer ── -->
+<footer class="site-footer">
+  <a href="https://github.com/ghostdep/ghostdep">GitHub</a>
+  &nbsp;·&nbsp;
+  MIT License
+  &nbsp;·&nbsp;
+  Built with <a href="https://www.ibm.com/products/ibm-bob">IBM Bob</a>
+  <br>
+  <span style="font-size:0.75rem;opacity:0.6">Made with IBM Bob</span>
+</footer>
+
+<!-- ── Terminal replay (inline JS, no external deps) ── -->
+<script>
+(function() {
+  var lines = [
+    { cls: "t-prompt", text: "$ ghostdep check reqeusts" },
+    { cls: "t-blocked", text: "BLOCKED  reqeusts" },
+    { cls: "t-bullet", text: "  \xB7 first published 3 days ago" },
+    { cls: "t-bullet", text: "  \xB7 5 downloads last month" },
+    { cls: "t-bullet", text: "  \xB7 closely resembles \u201crequests\u201d" },
+    { cls: "t-arrow",  text: "\u2192 Did you mean requests?" },
+  ];
+
+  var container = document.getElementById("terminal-output");
+  if (!container) return;
+
+  // Respect reduced-motion: show all lines immediately
+  var prefersReduced = window.matchMedia &&
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  if (prefersReduced) {
+    lines.forEach(function(l) {
+      var span = document.createElement("span");
+      span.className = "t-line " + l.cls;
+      span.textContent = l.text;
+      container.appendChild(span);
+    });
+    return;
+  }
+
+  var i = 0;
+  var delays = [400, 900, 1300, 1650, 2000, 2400];
+
+  lines.forEach(function(l, idx) {
+    setTimeout(function() {
+      var span = document.createElement("span");
+      span.className = "t-line " + l.cls;
+      span.textContent = l.text;
+      container.appendChild(span);
+    }, delays[idx] || (idx * 350));
+  });
+})();
+</script>
+
+</body>
+</html>

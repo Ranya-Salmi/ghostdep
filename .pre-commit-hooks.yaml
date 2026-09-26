@@ -1,0 +1,7 @@
+- id: ghostdep-scan
+  name: GhostDep dependency scan
+  description: Block hallucinated, typosquatted and vulnerable packages before they are committed.
+  entry: ghostdep scan
+  language: python
+  files: (^|/)(requirements[^/]*\.txt|pyproject\.toml)$
+  pass_filenames: true

@@ -2,11 +2,16 @@ name: GhostDep Radar
 
 on:
   schedule:
-    - cron: "*/30 * * * *"
+    # Offset from the top of the hour, when GitHub's scheduler is busiest.
+    - cron: "13,43 * * * *"
   workflow_dispatch:
 
 permissions:
   contents: write
+
+concurrency:
+  group: ghostdep-radar
+  cancel-in-progress: false
 
 jobs:
   radar:
@@ -17,15 +22,13 @@ jobs:
         with:
           python-version: "3.11"
       - run: pip install -e .
-      - name: Scan newest PyPI packages
-        run: |
-          mkdir -p radar
-          echo "=== $(date -u +%Y-%m-%dT%H:%MZ) ===" >> radar/log.txt
-          ghostdep scan-new >> radar/log.txt 2>&1 || true
+      - name: Sweep newest PyPI packages
+        run: python scripts/radar_update.py
       - name: Commit results
         run: |
           git config user.name "ghostdep-radar"
           git config user.email "radar@users.noreply.github.com"
-          git add radar/log.txt
-          git commit -m "Radar scan $(date -u +%Y-%m-%dT%H:%MZ)" || echo "No changes"
+          git add radar/ docs/radar.json
+          git commit -m "Radar sweep $(date -u +%Y-%m-%dT%H:%MZ)" || { echo "No changes"; exit 0; }
+          git pull --rebase
           git push

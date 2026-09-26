@@ -5,12 +5,6 @@ description: >-
   installing it; block hallucinated, typosquatted or vulnerable packages and
   choose a verified alternative.
 ---
-
----
-name: ghostdep-guard
-description: Vet every new dependency with the GhostDep MCP tool before adding or installing it; block hallucinated, typosquatted or vulnerable packages and choose a verified alternative.
-user-invocable: true
----
 Before adding any package to a dependency file (requirements.txt,
 pyproject.toml, package.json) or running any install command, follow
 these phases in order. Never install a package that has not been checked.

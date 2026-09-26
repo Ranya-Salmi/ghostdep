@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import os
 import re
+import subprocess
 import sys
 from pathlib import Path
 from typing import Optional
@@ -10,7 +11,17 @@ from typing import Optional
 import click
 
 from ghostdep.checker import run_checks
+from ghostdep.policy import Policy, load_policy, normalize
 from ghostdep.verdict import Severity, Verdict
+
+
+def _check(name: str, ecosystem: str, policy: Optional[Policy] = None) -> Verdict:
+    """Apply the team policy (allow/deny lists) first, then run the checks."""
+    if policy is not None:
+        decided = policy.verdict_for(name, ecosystem)
+        if decided is not None:
+            return decided
+    return run_checks(name, ecosystem)
 
 
 _COLOUR = {
@@ -100,7 +111,7 @@ def check(name: str, ecosystem: str, fmt: str, offline: bool) -> None:
     if offline:
         os.environ["GHOSTDEP_OFFLINE"] = "1"
 
-    verdict = run_checks(name, ecosystem)
+    verdict = _check(name, ecosystem, load_policy())
 
     if fmt == "sarif":
         _print_sarif(verdict)
@@ -142,10 +153,8 @@ def report(file: Path, output: str, ecosystem: str) -> None:
         click.echo(f"No packages found in {file}.", err=True)
         sys.exit(0)
 
-    verdicts: list[Verdict] = []
-    for name in packages:
-        v = run_checks(name, ecosystem)
-        verdicts.append(v)
+    policy = load_policy()
+    verdicts: list[Verdict] = [_check(name, ecosystem, policy) for name in packages]
 
     html_content = generate_html(verdicts, source_file=str(file))
     out_path = Path(output)
@@ -245,7 +254,7 @@ def _print_scan_summary(verdicts: list[Verdict], fmt: str) -> None:
     click.echo(f"  {'Package':<35} {'Verdict':<12} {'Reasons'}")
     click.echo("  " + "─" * 80)
     _REASON_WIDTH = 48  # chars before wrapping onto a continuation line
-    _INDENT = "  " + " " * 35 + "   " + " " * 12 + "  "
+    _INDENT = "  " + " " * 35 + " " + " " * 12 + " "
     for v in verdicts:
         colour = _COLOUR[v.overall]
         verdict_label = click.style(f"{v.overall.value:<12}", fg=colour, bold=True)
@@ -270,7 +279,7 @@ def _print_scan_summary(verdicts: list[Verdict], fmt: str) -> None:
         for part in reason_parts[1:]:
             for cont in _wrap(part, _REASON_WIDTH):
                 click.echo(f"{_INDENT}{cont}")
-    click.echo("  " + "─" * 70)
+    click.echo("  " + "─" * 80)
     safe_s = click.style(f"{counts[Severity.SAFE]} SAFE", fg="green")
     susp_s = click.style(f"{counts[Severity.SUSPICIOUS]} SUSPICIOUS", fg="yellow")
     blk_s = click.style(f"{counts[Severity.BLOCKED]} BLOCKED", fg="red")
@@ -279,7 +288,10 @@ def _print_scan_summary(verdicts: list[Verdict], fmt: str) -> None:
 
 
 @main.command()
-@click.argument("file", type=click.Path(exists=True, dir_okay=False, path_type=Path))
+@click.argument(
+    "files", nargs=-1, required=True,
+    type=click.Path(exists=True, dir_okay=False, path_type=Path),
+)
 @click.option(
     "--ecosystem",
     default="pypi",
@@ -295,36 +307,106 @@ def _print_scan_summary(verdicts: list[Verdict], fmt: str) -> None:
     type=click.Choice(["text", "sarif"]),
     help="Output format.",
 )
-def scan(file: Path, ecosystem: str, fmt: str) -> None:
-    """Scan a dependency file (requirements.txt / pyproject.toml) for risky packages.
+def scan(files: tuple[Path, ...], ecosystem: str, fmt: str) -> None:
+    """Scan dependency files (requirements.txt / pyproject.toml) for risky packages.
 
+    Accepts one or more files (so it works as a pre-commit hook).
     Exits 2 if any package is BLOCKED, 1 if any are SUSPICIOUS, 0 if all SAFE.
     """
-    packages = _read_packages(file)
+    packages: list[str] = []
+    seen: set[str] = set()
+    for file in files:
+        for name in _read_packages(file):
+            if normalize(name) not in seen:
+                seen.add(normalize(name))
+                packages.append(name)
     if not packages:
-        click.echo(f"No packages found in {file}.", err=True)
+        click.echo(f"No packages found in {', '.join(str(f) for f in files)}.", err=True)
         sys.exit(0)
 
-    verdicts: list[Verdict] = []
-    for name in packages:
-        v = run_checks(name, ecosystem)
-        verdicts.append(v)
+    policy = load_policy()
+    verdicts: list[Verdict] = [_check(name, ecosystem, policy) for name in packages]
 
     _print_scan_summary(verdicts, fmt)
+    sys.exit(_exit_code(verdicts))
 
-    # Determine exit code from worst verdict
-    worst = Severity.SAFE
-    for v in verdicts:
-        if v.overall == Severity.BLOCKED:
-            worst = Severity.BLOCKED
-            break
-        if v.overall == Severity.SUSPICIOUS:
-            worst = Severity.SUSPICIOUS
 
-    if worst == Severity.BLOCKED:
+def _exit_code(verdicts: list[Verdict]) -> int:
+    """2 if anything is BLOCKED, 1 if anything is SUSPICIOUS, else 0."""
+    overall = {v.overall for v in verdicts}
+    if Severity.BLOCKED in overall:
+        return 2
+    if Severity.SUSPICIOUS in overall:
+        return 1
+    return 0
+
+
+# ---------------------------------------------------------------------------
+# install command
+# ---------------------------------------------------------------------------
+
+_NAME_RE = re.compile(r"^(@[A-Za-z0-9._-]+/)?[A-Za-z0-9][A-Za-z0-9._-]*")
+
+
+def _name_from_spec(spec: str) -> str:
+    """'requests[socks]>=2.31' -> 'requests'; '@scope/pkg@1.2' -> '@scope/pkg'."""
+    m = _NAME_RE.match(spec.strip())
+    return m.group(0) if m else spec.strip()
+
+
+@main.command()
+@click.argument("packages", nargs=-1, required=True)
+@click.option(
+    "--ecosystem",
+    default="pypi",
+    show_default=True,
+    type=click.Choice(["pypi", "npm"]),
+    help="Package ecosystem (pip for pypi, npm for npm).",
+)
+@click.option("--yes", "-y", is_flag=True,
+              help="Install SUSPICIOUS packages without asking. BLOCKED is never installed.")
+@click.option("--dry-run", is_flag=True, help="Check only; print the install command.")
+def install(packages: tuple[str, ...], ecosystem: str, yes: bool, dry_run: bool) -> None:
+    """Check packages, then install them only if they are safe.
+
+    \b
+    BLOCKED     nothing is installed (exit 2)
+    SUSPICIOUS  asks for confirmation (or use --yes)
+    SAFE        runs pip install / npm install with the same arguments
+    """
+    policy = load_policy()
+    verdicts = [_check(_name_from_spec(spec), ecosystem, policy) for spec in packages]
+    _print_scan_summary(verdicts, "text")
+
+    blocked = [v for v in verdicts if v.overall == Severity.BLOCKED]
+    if blocked:
+        click.secho(
+            f"\nNothing was installed: {len(blocked)} package(s) BLOCKED.",
+            fg="red", bold=True,
+        )
+        for v in blocked:
+            hints = [f.suggestion for f in v.findings if f.suggestion]
+            if hints:
+                click.echo(f"  {v.package}: {hints[0]}")
         sys.exit(2)
-    elif worst == Severity.SUSPICIOUS:
-        sys.exit(1)
+
+    suspicious = [v for v in verdicts if v.overall == Severity.SUSPICIOUS]
+    if suspicious and not yes:
+        names = ", ".join(v.package for v in suspicious)
+        if not click.confirm(f"\n{names} flagged SUSPICIOUS. Install anyway?", default=False):
+            click.echo("Nothing was installed.")
+            sys.exit(1)
+
+    if ecosystem == "npm":
+        cmd = ["npm", "install", *packages]
+    else:
+        cmd = [sys.executable, "-m", "pip", "install", *packages]
+
+    if dry_run:
+        click.echo("\nDry run. Would run: " + " ".join(cmd))
+        return
+    click.secho("\nChecks passed. Running: " + " ".join(cmd), fg="green")
+    sys.exit(subprocess.call(cmd))
 
 
 # ---------------------------------------------------------------------------

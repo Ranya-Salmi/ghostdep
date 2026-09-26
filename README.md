@@ -75,7 +75,58 @@ The HTML file is fully self-contained (inline CSS, no external assets) and can b
 
 ---
 
+## Safe install command
+
+`ghostdep install` is a drop-in replacement for `pip install` (or `npm install`
+with `--ecosystem npm`). It checks every package first:
+
+| Verdict | What happens |
+|---|---|
+| BLOCKED | Nothing is installed, not even the safe packages in the same command (exit 2) |
+| SUSPICIOUS | You are asked to confirm (`--yes` to skip the prompt) |
+| SAFE | Runs `pip install` with your exact arguments, version pins included |
+
+```bash
+ghostdep install requests "python-dateutil>=2.9"
+ghostdep install fastapi-auth-helper-pro      # BLOCKED: nothing installed
+ghostdep install requests --dry-run           # check only, print the command
+```
+
+## Team policy (allow and deny lists)
+
+Private packages don't exist on public registries, so GhostDep would block them.
+Add a `.ghostdep.toml` at the root of your project (GhostDep searches the current
+directory and its parents, or set `GHOSTDEP_POLICY` to a path):
+
+```toml
+[policy]
+allow = ["acme-internal-auth", "acme-billing-client"]  # internal packages
+deny  = ["pycrypto"]                                   # never install
+```
+
+Allowed packages skip the registry checks; denied packages are always BLOCKED
+(deny wins over allow). The policy applies to `check`, `scan`, `report`,
+`install` and the MCP server used by IBM Bob.
+
+## Pre-commit hook
+
+Block risky dependencies before they are committed. In your project's
+`.pre-commit-config.yaml`:
+
+```yaml
+repos:
+  - repo: https://github.com/Ranya-Salmi/ghostdep
+    rev: main
+    hooks:
+      - id: ghostdep-scan
+```
+
+The hook runs `ghostdep scan` on any changed `requirements*.txt` or
+`pyproject.toml` and fails the commit if a package is BLOCKED or SUSPICIOUS.
+
 ## MCP Server (IBM Bob / Claude / Cursor / Copilot)
+
+> Full Bob integration guide (MCP, skill, Dependency Guardian mode, safety settings) and how Bob was used to build GhostDep: [`docs/BOB_SETUP.md`](docs/BOB_SETUP.md)
 
 GhostDep ships an [MCP](https://modelcontextprotocol.io) server that exposes a single tool:
 
@@ -134,6 +185,19 @@ on:
 The workflow runs `ghostdep scan --format sarif`, uploads the SARIF to the GitHub Security tab, and fails the job if any package is BLOCKED.  See [`.github/workflows/ghostdep.yml`](.github/workflows/ghostdep.yml) for the full configuration.
 
 ---
+
+## Radar (live PyPI monitoring)
+
+Every 30 minutes, a scheduled GitHub Action ([`radar.yml`](.github/workflows/radar.yml))
+reads PyPI's feed of newly created packages, checks each name it hasn't seen before
+against the 1,000 most-downloaded packages, and records possible lookalikes.
+
+- Live view: the **Radar** section of the [landing page](https://ranya-salmi.github.io/ghostdep/#radar)
+- Raw data: [`radar/history.jsonl`](radar/history.jsonl) (one record per sweep) and
+  [`radar/log.txt`](radar/log.txt) (human-readable)
+- Run a sweep locally: `python scripts/radar_update.py`
+
+Lookalikes are possible impersonations, not proof of malice; each one needs review.
 
 ## Benchmark results
 

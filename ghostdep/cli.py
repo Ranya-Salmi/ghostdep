@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import os
+import re
 import sys
 from pathlib import Path
 from typing import Optional
@@ -160,7 +161,6 @@ def _parse_requirements_txt(path: Path) -> list[str]:
         if not line:
             continue
         # Strip extras [...]
-        import re
         name = re.split(r"[\[;,<>=!~\s]", line)[0].strip()
         if name:
             names.append(name)
@@ -183,7 +183,6 @@ def _parse_pyproject_toml(path: Path) -> list[str]:
                 return []
         data = tomllib.loads(path.read_text(encoding="utf-8"))
         deps: list[str] = data.get("project", {}).get("dependencies", [])
-        import re
         names: list[str] = []
         for dep in deps:
             name = re.split(r"[\[;,<>=!~\s]", dep.strip())[0].strip()

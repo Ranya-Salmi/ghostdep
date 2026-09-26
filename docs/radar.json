@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-09-26T18:42:37Z",
+  "generated_at": "2026-09-26T21:35:34Z",
   "first_sweep": "2026-09-26T18:42:37Z",
-  "last_sweep": "2026-09-26T18:42:37Z",
-  "sweeps": 1,
-  "packages_checked": 40,
+  "last_sweep": "2026-09-26T21:35:34Z",
+  "sweeps": 2,
+  "packages_checked": 80,
   "lookalikes": [
     {
       "name": "sopuli",
@@ -21,6 +21,11 @@
       "at": "2026-09-26T18:42:37Z",
       "new": 40,
       "lookalikes": 2
+    },
+    {
+      "at": "2026-09-26T21:35:34Z",
+      "new": 40,
+      "lookalikes": 0
     }
   ]
 }

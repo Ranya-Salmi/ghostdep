@@ -19,13 +19,32 @@ _COLOUR = {
     Severity.BLOCKED: "red",
 }
 
+_ECOSYSTEM_DISPLAY = {"pypi": "PyPI", "npm": "npm"}
+
+
+def _wrap(text: str, width: int) -> list[str]:
+    """Split *text* into lines of at most *width* chars, breaking at spaces."""
+    if len(text) <= width:
+        return [text]
+    lines: list[str] = []
+    while len(text) > width:
+        split_at = text.rfind(" ", 0, width)
+        if split_at <= 0:
+            split_at = width  # hard break — no space found
+        lines.append(text[:split_at])
+        text = text[split_at:].lstrip()
+    if text:
+        lines.append(text)
+    return lines
+
 
 def _print_text(verdict) -> None:
     """Print a human-readable, colour-highlighted report."""
     colour = _COLOUR[verdict.overall]
+    eco_display = _ECOSYSTEM_DISPLAY.get(verdict.ecosystem, verdict.ecosystem)
     click.echo(
         click.style(
-            f"● {verdict.overall.value}: {verdict.package} ({verdict.ecosystem})",
+            f"● {verdict.overall.value}: {verdict.package} ({eco_display})",
             fg=colour,
             bold=True,
         )
@@ -224,15 +243,33 @@ def _print_scan_summary(verdicts: list[Verdict], fmt: str) -> None:
     click.echo("")
     click.echo(click.style("GhostDep Scan Summary", bold=True))
     click.echo(f"  {'Package':<35} {'Verdict':<12} {'Reasons'}")
-    click.echo("  " + "─" * 70)
+    click.echo("  " + "─" * 80)
+    _REASON_WIDTH = 48  # chars before wrapping onto a continuation line
+    _INDENT = "  " + " " * 35 + "   " + " " * 12 + "  "
     for v in verdicts:
         colour = _COLOUR[v.overall]
-        reasons = "; ".join(f.message[:50] for f in v.findings) if v.findings else ""
-        suggestion = next((f.suggestion for f in v.findings if f.suggestion), "")
         verdict_label = click.style(f"{v.overall.value:<12}", fg=colour, bold=True)
-        click.echo(f"  {v.package:<35} {verdict_label} {reasons}")
-        if suggestion:
-            click.echo(f"  {'':35}   → {suggestion}")
+        # Build full reason lines (one per finding)
+        reason_parts: list[str] = []
+        for f in v.findings:
+            line = f.message
+            if f.suggestion:
+                line += f"  → {f.suggestion}"
+            reason_parts.append(line)
+        if not reason_parts:
+            click.echo(f"  {v.package:<35} {verdict_label}")
+            continue
+        # First reason on the same line as the package
+        first = reason_parts[0]
+        # Wrap first reason at _REASON_WIDTH
+        first_lines = _wrap(first, _REASON_WIDTH)
+        click.echo(f"  {v.package:<35} {verdict_label} {first_lines[0]}")
+        for cont in first_lines[1:]:
+            click.echo(f"{_INDENT}{cont}")
+        # Remaining reasons on continuation lines
+        for part in reason_parts[1:]:
+            for cont in _wrap(part, _REASON_WIDTH):
+                click.echo(f"{_INDENT}{cont}")
     click.echo("  " + "─" * 70)
     safe_s = click.style(f"{counts[Severity.SAFE]} SAFE", fg="green")
     susp_s = click.style(f"{counts[Severity.SUSPICIOUS]} SUSPICIOUS", fg="yellow")
@@ -337,8 +374,14 @@ def scan_new(url: str, feed_file: Optional[str]) -> None:
 
     click.echo(
         click.style(
-            f"Found {len(lookalikes)} potential typosquat(s) in {len(names)} new packages:",
+            f"{len(lookalikes)} possible lookalike(s) in {len(names)} new packages:",
             fg="red", bold=True,
+        )
+    )
+    click.echo(
+        click.style(
+            "  Lookalikes are not necessarily malicious; review before acting.",
+            fg="yellow",
         )
     )
     click.echo(f"  {'New package':<35} {'Resembles'}")

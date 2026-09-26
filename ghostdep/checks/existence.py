@@ -17,6 +17,8 @@ from ghostdep.cache import cached_get
 from ghostdep.constants import NPM_REGISTRY_URL, PYPI_JSON_URL
 from ghostdep.verdict import Finding, Severity
 
+_DISPLAY = {"pypi": "PyPI", "npm": "npm"}
+
 
 def check_existence(name: str, ecosystem: str) -> tuple[Optional[Finding], Optional[dict]]:
     """Return (finding_or_None, registry_data_or_None).
@@ -35,7 +37,7 @@ def check_existence(name: str, ecosystem: str) -> tuple[Optional[Finding], Optio
         # cached_get stores None for 404 responses
         return Finding(
             check="existence",
-            message=f"Package '{name}' not found in {ecosystem.upper()} registry.",
+            message=f"Package '{name}' not found in {_DISPLAY.get(ecosystem, ecosystem.upper())} registry.",
             severity=Severity.BLOCKED,
         ), None
 
@@ -53,6 +55,6 @@ def _registry_url(name: str, ecosystem: str) -> str:
 def _unreachable(ecosystem: str) -> Finding:
     return Finding(
         check="existence",
-        message=f"Could not verify package in {ecosystem.upper()} registry (network error).",
+        message=f"Could not verify package in {_DISPLAY.get(ecosystem, ecosystem.upper())} registry (network error).",
         severity=Severity.SUSPICIOUS,
     )

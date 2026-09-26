@@ -177,3 +177,74 @@ def test_scan_new_empty_feed():
         assert "No packages" in result.output
     finally:
         os.unlink(tmp)
+
+
+# ---------------------------------------------------------------------------
+# Radar precision tests
+# ---------------------------------------------------------------------------
+
+def test_short_name_fdu_not_flagged():
+    """Names shorter than RADAR_MIN_NAME_LENGTH (normalised) must be skipped."""
+    with patch(
+        "ghostdep.checks.typosquat._load_top_list",
+        side_effect=lambda eco: ["requests", "numpy", "flask"] if eco == "pypi" else [],
+    ):
+        lookalikes = check_new_packages(["fdu"])
+    assert lookalikes == [], "Short name 'fdu' (3 chars) should not be flagged"
+
+
+def test_reqeusts_still_detected():
+    """'reqeusts' (7 chars) must still be detected after radar precision changes."""
+    with patch(
+        "ghostdep.checks.typosquat._load_top_list",
+        side_effect=lambda eco: ["requests"] if eco == "pypi" else [],
+    ):
+        lookalikes = check_new_packages(["reqeusts"])
+    names = [n for n, _ in lookalikes]
+    assert "reqeusts" in names
+
+
+def test_numppy_still_detected():
+    """'numppy' must still be detected as a lookalike of 'numpy'."""
+    with patch(
+        "ghostdep.checks.typosquat._load_top_list",
+        side_effect=lambda eco: ["numpy"] if eco == "pypi" else [],
+    ):
+        lookalikes = check_new_packages(["numppy"])
+    names = [n for n, _ in lookalikes]
+    assert "numppy" in names
+
+
+def test_name_in_top_list_not_flagged():
+    """A name already in the top list (the real package) must be skipped."""
+    with patch(
+        "ghostdep.checks.typosquat._load_top_list",
+        side_effect=lambda eco: ["requests", "numpy"] if eco == "pypi" else [],
+    ):
+        # "requests" is in the top list — it must not be flagged as its own lookalike
+        lookalikes = check_new_packages(["requests"])
+    assert lookalikes == [], "'requests' is in the top list and must not be flagged"
+
+
+def test_scan_new_output_heading():
+    """scan-new output must say 'possible lookalike(s)' not 'potential typosquat(s)'."""
+    runner = CliRunner()
+    import tempfile, os
+    with tempfile.NamedTemporaryFile(
+        mode="w", suffix=".xml", delete=False, encoding="utf-8"
+    ) as f:
+        f.write(_SAMPLE_RSS)
+        tmp = f.name
+    try:
+        with patch(
+            "ghostdep.checks.typosquat._load_top_list",
+            side_effect=lambda eco: ["requests"] if eco == "pypi" else [],
+        ):
+            result = runner.invoke(main, ["scan-new", "--feed-file", tmp])
+        assert "possible lookalike" in result.output.lower(), (
+            f"Expected 'possible lookalike' in output, got: {result.output!r}"
+        )
+        assert "Lookalikes are not necessarily malicious" in result.output
+    finally:
+        os.unlink(tmp)
+

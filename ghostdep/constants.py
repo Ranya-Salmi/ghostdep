@@ -17,6 +17,10 @@ NPM_MIN_DOWNLOADS_WEEK: int = 500  # weekly downloads via npm download-counts AP
 #   >  5 chars -> max distance 2
 TOP_LIST_SIZE: int = 5_000  # entries loaded from top_*.txt
 
+# --- New-upload radar (scan-new command) -----------------------------------
+RADAR_MIN_NAME_LENGTH: int = 5   # skip names shorter than this (normalised)
+RADAR_TOP_N: int = 1_000         # compare only against top-N popular packages
+
 # --- Caching ---------------------------------------------------------------
 import os
 CACHE_DIR = os.environ.get("GHOSTDEP_CACHE_DIR", "D:/ghostdep/.cache/ghostdep")

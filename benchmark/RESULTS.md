@@ -6,6 +6,18 @@
 
 ---
 
+## Live Catch
+
+On **2026-09-25**, GhostDep returned **BLOCKED** for `reqeusts`:
+
+- First published 3 days earlier
+- 5 downloads last month
+- Closely resembles `requests` (edit distance 2)
+
+By **2026-09-26**, `reqeusts` was no longer available on PyPI.
+
+---
+
 ## Summary
 
 | Metric | Value |
@@ -58,6 +70,29 @@ list.
 All 30 packages sampled from the top-500 (e.g. `pygments`, `pillow`, `pyyaml`,
 `litellm`) were correctly classified SAFE.  The popularity and age checks are
 calibrated conservatively enough that well-established packages are not penalised.
+
+---
+
+## Name-Similarity Detection on Historical Attacks
+
+> **Note:** These packages no longer exist on PyPI. The following results are a
+> simulated replay: each package is tested directly through the typosquat check
+> (bypassing the existence check), simulated as an upload that is 3 days old with
+> 10 downloads — the typical profile of a live typosquat attack.
+
+| Attack package | Imitates | Verdict | Suggestion |
+|---|---|---|---|
+| `colourama` | `colorama` | **BLOCKED** | Did you mean 'colorama'? |
+| `python3-dateutil` | `python-dateutil` | **BLOCKED** | Did you mean 'python-dateutil'? |
+| `jeIlyfish` (capital I) | `jellyfish` | **BLOCKED** | Did you mean 'jellyfish'? |
+
+Detection rate on historical attacks: **3/3 (100%)**
+
+All three are caught by the OSA edit-distance check (Check 4). `colourama` and
+`python3-dateutil` are within edit distance 2 of their targets. `jeIlyfish` uses a
+visually ambiguous capital `I` instead of lowercase `l`; after normalisation
+`jeIlyfish` becomes `jeilyfish` (not `jellyfish`) giving an OSA distance of 1 from
+`jellyfish`, which is within the threshold — correctly BLOCKED.
 
 ---
 

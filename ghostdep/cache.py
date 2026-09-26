@@ -41,7 +41,7 @@ def _get_cache() -> diskcache.Cache:
     if _cache is None:
         # Read CACHE_DIR via module reference so monkeypatch works in tests
         path = os.path.expanduser(_constants.CACHE_DIR)
-        _cache = diskcache.Cache(path)
+        _cache = diskcache.Cache(path, timeout=60)
     return _cache
 
 

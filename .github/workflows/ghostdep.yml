@@ -1,0 +1,46 @@
+name: GhostDep dependency scan
+
+on:
+  pull_request:
+    paths:
+      - "requirements.txt"
+      - "pyproject.toml"
+
+jobs:
+  ghostdep-scan:
+    name: Scan dependencies
+    runs-on: ubuntu-latest
+    permissions:
+      # Required to upload SARIF results to GitHub Security tab
+      security-events: write
+      contents: read
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install ghostdep
+        run: pip install -e ".[dev]"
+
+      - name: Run ghostdep scan
+        # Exit code 2 = BLOCKED → fail the job.
+        # Exit code 1 = SUSPICIOUS → we still upload SARIF but continue.
+        run: |
+          ghostdep scan requirements.txt --format sarif > ghostdep.sarif || EXIT=$?
+          echo "ghostdep exit code: ${EXIT:-0}"
+          if [ "${EXIT:-0}" -eq 2 ]; then
+            echo "::error::GhostDep found BLOCKED packages. See the Security tab for details."
+            exit 2
+          fi
+
+      - name: Upload SARIF to GitHub Security tab
+        if: always()
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: ghostdep.sarif
+          category: ghostdep

@@ -91,3 +91,34 @@ def verdict_to_sarif(verdict: Verdict) -> dict[str, Any]:
 def verdict_to_sarif_str(verdict: Verdict, indent: int = 2) -> str:
     """Return the SARIF document as a formatted JSON string."""
     return json.dumps(verdict_to_sarif(verdict), indent=indent)
+
+
+def verdicts_to_sarif(verdicts: list[Verdict]) -> dict[str, Any]:
+    """Merge multiple Verdicts into a single SARIF document (for `scan`)."""
+    all_results: list[dict[str, Any]] = []
+    for v in verdicts:
+        doc = verdict_to_sarif(v)
+        all_results.extend(doc["runs"][0]["results"])
+
+    return {
+        "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0.json",
+        "version": "2.1.0",
+        "runs": [
+            {
+                "tool": {
+                    "driver": {
+                        "name": "ghostdep",
+                        "version": _tool_version(),
+                        "informationUri": "https://github.com/ghostdep/ghostdep",
+                        "rules": [],
+                    }
+                },
+                "results": all_results,
+            }
+        ],
+    }
+
+
+def verdicts_to_sarif_str(verdicts: list[Verdict], indent: int = 2) -> str:
+    """Return multi-verdict SARIF document as a formatted JSON string."""
+    return json.dumps(verdicts_to_sarif(verdicts), indent=indent)

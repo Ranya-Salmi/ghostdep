@@ -289,3 +289,61 @@ def scan(file: Path, ecosystem: str, fmt: str) -> None:
         sys.exit(2)
     elif worst == Severity.SUSPICIOUS:
         sys.exit(1)
+
+
+# ---------------------------------------------------------------------------
+# scan-new command
+# ---------------------------------------------------------------------------
+
+@main.command("scan-new")
+@click.option(
+    "--url",
+    default="https://pypi.org/rss/packages.xml",
+    show_default=True,
+    help="PyPI newest-packages RSS feed URL.",
+)
+@click.option(
+    "--feed-file",
+    default=None,
+    type=click.Path(exists=True, dir_okay=False),
+    help="Use a local RSS XML file instead of fetching from --url (for testing).",
+)
+def scan_new(url: str, feed_file: Optional[str]) -> None:
+    """Scan PyPI's newest-packages RSS for typosquats of popular packages.
+
+    Fetches the feed, extracts package names, and runs the typosquatting check
+    against the top list for each name.  Prints any lookalikes found.
+    """
+    from ghostdep.scan_new import parse_rss, check_new_packages, _fetch_rss
+
+    if feed_file:
+        xml_text = Path(feed_file).read_text(encoding="utf-8")
+    else:
+        try:
+            xml_text = _fetch_rss(url)
+        except Exception as exc:
+            click.echo(f"Error fetching feed: {exc}", err=True)
+            sys.exit(1)
+
+    names = parse_rss(xml_text)
+    if not names:
+        click.echo("No packages found in feed.")
+        return
+
+    lookalikes = check_new_packages(names)
+
+    if not lookalikes:
+        click.echo(f"Checked {len(names)} new packages — no typosquats detected.")
+        return
+
+    click.echo(
+        click.style(
+            f"Found {len(lookalikes)} potential typosquat(s) in {len(names)} new packages:",
+            fg="red", bold=True,
+        )
+    )
+    click.echo(f"  {'New package':<35} {'Resembles'}")
+    click.echo("  " + "─" * 55)
+    for name, popular in lookalikes:
+        name_s = click.style(f"{name:<35}", fg="red")
+        click.echo(f"  {name_s} {popular}")

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>PyPI newest packages</title>
+    <link>https://pypi.org/pypi</link>
+    <description>The newest packages on the Python Package Index</description>
+
+    <item>
+      <title>reqeusts 1.0.0</title>
+      <link>https://pypi.org/project/reqeusts/</link>
+      <description>A popular HTTP library (definitely not a typo)</description>
+      <pubDate>Fri, 25 Sep 2026 08:00:00 GMT</pubDate>
+      <guid>https://pypi.org/project/reqeusts/1.0.0</guid>
+    </item>
+
+    <item>
+      <title>numppy 1.0.0</title>
+      <link>https://pypi.org/project/numppy/</link>
+      <description>Fast numerical computation</description>
+      <pubDate>Fri, 25 Sep 2026 07:30:00 GMT</pubDate>
+      <guid>https://pypi.org/project/numppy/1.0.0</guid>
+    </item>
+
+    <item>
+      <title>my-totally-new-util 0.1.0</title>
+      <link>https://pypi.org/project/my-totally-new-util/</link>
+      <description>A brand new utility package</description>
+      <pubDate>Fri, 25 Sep 2026 07:00:00 GMT</pubDate>
+      <guid>https://pypi.org/project/my-totally-new-util/0.1.0</guid>
+    </item>
+
+    <item>
+      <title>flasks 0.9.0</title>
+      <link>https://pypi.org/project/flasks/</link>
+      <description>Web framework</description>
+      <pubDate>Fri, 25 Sep 2026 06:45:00 GMT</pubDate>
+      <guid>https://pypi.org/project/flasks/0.9.0</guid>
+    </item>
+
+    <item>
+      <title>legitimate-data-parser 2.0.0</title>
+      <link>https://pypi.org/project/legitimate-data-parser/</link>
+      <description>Parse data files</description>
+      <pubDate>Fri, 25 Sep 2026 06:00:00 GMT</pubDate>
+      <guid>https://pypi.org/project/legitimate-data-parser/2.0.0</guid>
+    </item>
+
+  </channel>
+</rss>

@@ -5,9 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="GhostDep stops AI coding agents from installing packages that don't exist — hallucinated or typosquatted dependencies caught before pip install runs.">
 <meta property="og:title" content="GhostDep — Stop AI agents from installing ghost packages">
-<meta property="og:description" content="Five deterministic checks. Zero installs of hallucinated or typosquatted packages. Works with IBM Bob, CLI, and GitHub Actions.">
+<meta property="og:description" content="Five deterministic checks that block hallucinated and typosquatted packages before an AI agent installs them. Works with IBM Bob, the CLI, and GitHub Actions.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://ghostdep.github.io/ghostdep/">
+<meta property="og:url" content="https://ranya-salmi.github.io/ghostdep/">
 <title>GhostDep — Stop AI agents from installing packages that don't exist</title>
 <style>
 /* ── Design tokens ─────────────────────── */
@@ -435,7 +435,7 @@ footer.site-footer {
     <li><a href="#how-it-works">How it works</a></li>
     <li><a href="#benchmark">Benchmark</a></li>
     <li><a href="#integrations">Works everywhere</a></li>
-    <li><a href="https://github.com/ghostdep/ghostdep">GitHub</a></li>
+    <li><a href="https://github.com/Ranya-Salmi/ghostdep">GitHub</a></li>
   </ul>
 </nav>
 
@@ -448,12 +448,12 @@ footer.site-footer {
         <span class="hl">don't exist.</span>
       </h1>
       <p class="hero-sub">
-        AI coding agents hallucinate package names. Attackers publish typosquats
-        that vanish hours later. GhostDep intercepts every <code>pip install</code>
-        before it runs and blocks ghost packages before they touch your environment.
+        AI coding agents hallucinate package names, and attackers register them.
+        GhostDep checks every package before your agent installs it — inside IBM Bob,
+        in the terminal, and in CI.
       </p>
       <div class="hero-buttons">
-        <a href="https://github.com/ghostdep/ghostdep" class="btn btn-primary">View on GitHub</a>
+        <a href="https://github.com/Ranya-Salmi/ghostdep" class="btn btn-primary">View on GitHub</a>
         <a href="report-example.html" class="btn btn-secondary">See an example report</a>
       </div>
     </div>
@@ -519,8 +519,8 @@ footer.site-footer {
     <p class="section-label">How it works</p>
     <h2 class="section-title" id="how-title">Five checks, one verdict</h2>
     <p class="section-body">
-      GhostDep runs five deterministic checks in order.
-      The first failure wins; a BLOCKED verdict stops the install immediately.
+      GhostDep runs five deterministic checks. The most severe result becomes the
+      verdict; a BLOCKED package is never installed.
     </p>
     <div class="flow" role="list">
       <div class="flow-step" role="listitem">
@@ -583,8 +583,10 @@ footer.site-footer {
     <p class="bench-note">
       Historical attacks (colourama, python3-dateutil, jeIlyfish) are simulated replays —
       those packages no longer exist on PyPI and are tested via the typosquat check directly.
+      All 30 generated typosquats and hallucinated names were caught by the existence check;
+      the typosquat check itself is evaluated in the historical replay.
       Full methodology and per-package results:
-      <a href="https://github.com/ghostdep/ghostdep/blob/master/benchmark/RESULTS.md">benchmark/RESULTS.md</a>
+      <a href="https://github.com/Ranya-Salmi/ghostdep/blob/main/benchmark/RESULTS.md">benchmark/RESULTS.md</a>
     </p>
   </div>
 </section>
@@ -609,8 +611,8 @@ footer.site-footer {
         <div class="int-body">
           Register as an MCP server via <strong>Bob Settings → MCP → +</strong>
           (project scope), then activate the <strong>Dependency Guardian</strong> mode
-          or the <strong>ghostdep-guard</strong> skill. Bob calls
-          <code>check_package()</code> automatically before every install.
+          or the <strong>ghostdep-guard</strong> skill. While active, Bob checks every
+          new package with <code>check_package()</code> before installing it.
           <pre class="code-block"><span class="c-comment">// Bob MCP config (project scope)</span>
 {
   <span class="c-key">"mcpServers"</span>: {
@@ -655,7 +657,8 @@ footer.site-footer {
           Scans every PR that touches <code>requirements.txt</code> or
           <code>pyproject.toml</code>, uploads SARIF to the GitHub Security tab,
           and fails the job on BLOCKED packages.
-          <pre class="code-block"><span class="c-comment"># .github/workflows/ghostdep.yml</span>
+          <pre class="code-block"><span class="c-comment"># abridged</span>
+<span class="c-comment"># .github/workflows/ghostdep.yml</span>
 <span class="c-key">on:</span>
   <span class="c-key">pull_request:</span>
     <span class="c-key">paths:</span> [<span class="c-str">"requirements.txt"</span>, <span class="c-str">"pyproject.toml"</span>]
@@ -678,7 +681,7 @@ footer.site-footer {
 
 <!-- ── Site footer ── -->
 <footer class="site-footer">
-  <a href="https://github.com/ghostdep/ghostdep">GitHub</a>
+  <a href="https://github.com/Ranya-Salmi/ghostdep">GitHub</a>
   &nbsp;·&nbsp;
   MIT License
   &nbsp;·&nbsp;

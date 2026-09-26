@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GhostDep Report — demo/weather-api/requirements.txt</title>
+<style>
+:root {
+  --bg: #0d1117;
+  --surface: #161b22;
+  --surface2: #21262d;
+  --border: #30363d;
+  --text: #c9d1d9;
+  --muted: #8b949e;
+  --accent: #58a6ff;
+  --safe: #3fb950;
+  --suspicious: #d29922;
+  --blocked: #f85149;
+  --mono: ui-monospace, "Cascadia Code", "JetBrains Mono", Consolas, monospace;
+  --sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.6;
+  min-height: 100vh;
+  padding: 2rem 1rem;
+}
+
+.page { max-width: 860px; margin: 0 auto; }
+
+/* ── Header ─────────────────────────────── */
+.header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+.header h1 { font-size: 1.6rem; letter-spacing: -0.02em; }
+.header h1 span { color: var(--accent); }
+.header .meta { font-size: 0.85rem; color: var(--muted); font-family: var(--mono); }
+
+/* ── Counters ───────────────────────────── */
+.counters {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+.counter {
+  flex: 1 1 140px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.25rem 1.5rem;
+  text-align: center;
+}
+.counter .num {
+  font-size: 2.8rem;
+  font-weight: 700;
+  line-height: 1;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+.counter .label { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); }
+.counter.safe .num   { color: var(--safe); }
+.counter.suspicious .num { color: var(--suspicious); }
+.counter.blocked .num { color: var(--blocked); }
+
+.summary-line {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-bottom: 2rem;
+}
+
+/* ── Package cards ──────────────────────── */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+.card.blocked { border-left: 3px solid var(--blocked); }
+.card.suspicious { border-left: 3px solid var(--suspicious); }
+.card.safe { border-left: 3px solid var(--safe); }
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.875rem 1.25rem;
+  background: var(--surface2);
+  flex-wrap: wrap;
+}
+.pkg-name {
+  font-family: var(--mono);
+  font-size: 1rem;
+  font-weight: 600;
+}
+.pkg-name.ghost {
+  opacity: 0.55;
+  text-decoration: line-through;
+  text-decoration-color: var(--blocked);
+  text-decoration-thickness: 2px;
+}
+.badge {
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+}
+.badge.safe       { color: var(--safe);       border-color: var(--safe);       }
+.badge.suspicious { color: var(--suspicious); border-color: var(--suspicious); }
+.badge.blocked    { color: var(--blocked);    border-color: var(--blocked);    }
+
+.card-body { padding: 1rem 1.25rem; }
+
+.findings { list-style: none; margin-bottom: 0.5rem; }
+.finding {
+  padding: 0.35rem 0;
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  color: var(--text);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  gap: 0.75rem;
+  align-items: baseline;
+}
+.finding:last-child { border-bottom: none; }
+.finding-check { color: var(--muted); min-width: 110px; }
+.finding-msg { flex: 1; word-break: break-word; }
+.finding-sev { padding: 0.1rem 0.4rem; border-radius: 3px; font-size: 0.7rem; text-transform: uppercase; }
+.finding-sev.BLOCKED    { background: rgba(248,81,73,0.15); color: var(--blocked); }
+.finding-sev.SUSPICIOUS { background: rgba(210,153,34,0.15); color: var(--suspicious); }
+.finding-sev.SAFE       { background: rgba(63,185,80,0.15);  color: var(--safe); }
+
+.suggestion-box {
+  margin-top: 0.75rem;
+  padding: 0.75rem 1rem;
+  background: rgba(248,81,73,0.08);
+  border: 1px solid rgba(248,81,73,0.3);
+  border-radius: 6px;
+  font-size: 0.875rem;
+}
+.suggestion-box strong { color: var(--blocked); }
+.suggestion-box .alt   { font-family: var(--mono); color: var(--accent); }
+
+.no-findings { font-size: 0.875rem; color: var(--muted); }
+
+/* ── Footer ─────────────────────────────── */
+.footer {
+  margin-top: 3rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+</style>
+</head>
+<body>
+<div class="page">
+  <header class="header">
+    <h1>Ghost<span>Dep</span> Report</h1>
+    <div class="meta">demo/weather-api/requirements.txt &nbsp;·&nbsp; 2026-09-26 10:00 UTC</div>
+  </header>
+  <div class="counters"><div class="counter safe"><span class="num">2</span><span class="label">Safe</span></div><div class="counter suspicious"><span class="num">0</span><span class="label">Suspicious</span></div><div class="counter blocked"><span class="num">2</span><span class="label">Blocked</span></div></div>
+  <p class="summary-line">2 of 4 packages blocked before install.</p>
+  <section aria-label="Package results">
+    <div class="card blocked"><div class="card-header"><span class="pkg-name ghost">reqeusts</span><span class="badge blocked">BLOCKED</span></div><div class="card-body"><ul class="findings"><li class="finding"><span class="finding-check">existence</span><span class="finding-msg">Package &#x27;reqeusts&#x27; was not found on PyPI (HTTP 404).</span><span class="finding-sev BLOCKED">BLOCKED</span></li><li class="finding"><span class="finding-check">typosquat</span><span class="finding-msg">&#x27;reqeusts&#x27; closely resembles the popular package &#x27;requests&#x27; (edit distance 2) but is not itself well-established.</span><span class="finding-sev BLOCKED">BLOCKED</span></li></ul><div class="suggestion-box"><strong>Use instead:</strong> <span class="alt">Did you mean &#x27;requests&#x27;?</span></div></div></div>
+<div class="card blocked"><div class="card-header"><span class="pkg-name ghost">fastapi-auth-helper-pro</span><span class="badge blocked">BLOCKED</span></div><div class="card-body"><ul class="findings"><li class="finding"><span class="finding-check">existence</span><span class="finding-msg">Package &#x27;fastapi-auth-helper-pro&#x27; was not found on PyPI (HTTP 404).</span><span class="finding-sev BLOCKED">BLOCKED</span></li></ul><div class="suggestion-box"><strong>Use instead:</strong> <span class="alt">Did you mean &#x27;fastapi&#x27;?</span></div></div></div>
+<div class="card safe"><div class="card-header"><span class="pkg-name">requests</span><span class="badge safe">SAFE</span></div><div class="card-body"><p class="no-findings">No issues found.</p></div></div>
+<div class="card safe"><div class="card-header"><span class="pkg-name">python-dateutil</span><span class="badge safe">SAFE</span></div><div class="card-body"><p class="no-findings">No issues found.</p></div></div>
+  </section>
+  <footer class="footer">
+    Checked by GhostDep &nbsp;·&nbsp;
+    existence &nbsp;·&nbsp; age &nbsp;·&nbsp; popularity &nbsp;·&nbsp;
+    typosquatting &nbsp;·&nbsp; vulnerabilities (OSV)
+  </footer>
+</div>
+</body>
+</html>

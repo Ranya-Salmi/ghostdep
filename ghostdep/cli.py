@@ -95,6 +95,46 @@ def check(name: str, ecosystem: str, fmt: str, offline: bool) -> None:
 
 
 # ---------------------------------------------------------------------------
+# report command
+# ---------------------------------------------------------------------------
+
+@main.command()
+@click.argument("file", type=click.Path(exists=True, dir_okay=False, path_type=Path))
+@click.option(
+    "--output", "-o",
+    default="report.html",
+    show_default=True,
+    help="Path to write the HTML report.",
+)
+@click.option(
+    "--ecosystem",
+    default="pypi",
+    show_default=True,
+    type=click.Choice(["pypi", "npm"]),
+    help="Package ecosystem.",
+)
+def report(file: Path, output: str, ecosystem: str) -> None:
+    """Scan a dependency file and write a self-contained HTML report."""
+    from ghostdep.report import generate_html
+
+    packages = _read_packages(file)
+    if not packages:
+        click.echo(f"No packages found in {file}.", err=True)
+        sys.exit(0)
+
+    verdicts: list[Verdict] = []
+    for name in packages:
+        v = run_checks(name, ecosystem)
+        verdicts.append(v)
+
+    html_content = generate_html(verdicts, source_file=str(file))
+    out_path = Path(output)
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    out_path.write_text(html_content, encoding="utf-8")
+    click.echo(f"Report written to {out_path}")
+
+
+# ---------------------------------------------------------------------------
 # Dependency file parsing helpers
 # ---------------------------------------------------------------------------
 

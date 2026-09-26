@@ -13,42 +13,49 @@ This script walks through the full demo in ~5 minutes. Record each step in order
 
 ---
 
-## Step 1 — Run `ghostdep scan` on the bad requirements file
+## Step 1 — Run `ghostdep scan` on the original requirements file
+
+`requirements.before.txt` is the file as it was before Bob fixed it.
 
 ```bash
-ghostdep scan demo/weather-api/requirements.txt
+ghostdep scan demo/weather-api/requirements.before.txt
 ```
 
-Expected output:
+Expected output (since 2026-09-26 `reqeusts` no longer exists on PyPI, so it
+is blocked by the existence check):
 
 ```
 GhostDep Scan Summary
   Package                             Verdict      Reasons
-  ──────────────────────────────────────────────────────────────────────────
+  ──────────────────────────────────────────────────────────────────────
   requests                            SAFE
-  reqeusts                            BLOCKED      'reqeusts' closely resembles 'requests'
-                                         → Did you mean 'requests'?
-  fastapi-auth-helper-pro             BLOCKED      existence:BLOCKED (404)
+  reqeusts                            BLOCKED      Package 'reqeusts' not found in PyPI registry.
+  fastapi-auth-helper-pro             BLOCKED      Package 'fastapi-auth-helper-pro' not found in
+                                                   PyPI registry.
   python-dateutil                     SAFE
-  ──────────────────────────────────────────────────────────────────────────
+  ──────────────────────────────────────────────────────────────────────
   4 packages checked: 2 SAFE  0 SUSPICIOUS  2 BLOCKED
 ```
 
-The exit code is **2** (BLOCKED packages found).
+The exit code is **2** (BLOCKED packages found). Then show the clean file:
+
+```bash
+ghostdep scan demo/weather-api/requirements.txt    # exit code 0
+```
 
 ---
 
 ## Step 2 — Open the HTML report
 
 ```bash
-ghostdep report demo/weather-api/requirements.txt --output demo/report-example.html
+ghostdep report demo/weather-api/requirements.before.txt --output demo/report-example.html
 ```
 
 Open `demo/report-example.html` in a browser. Point out:
 
 - BLOCKED packages appear at the top with ghost styling (struck-through name).
-- The "Use instead" box for `reqeusts` shows the correct spelling `requests`.
-- `fastapi-auth-helper-pro` is BLOCKED because it does not exist on PyPI.
+- Each BLOCKED card explains why, in one line.
+- SAFE packages are shown solid, below.
 
 ---
 

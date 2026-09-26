@@ -65,7 +65,7 @@ out = Path(__file__).parent.parent / "demo" / "report-example.html"
 out.parent.mkdir(parents=True, exist_ok=True)
 html = generate_html(
     verdicts,
-    source_file="demo/weather-api/requirements.txt",
+    source_file="demo/weather-api/requirements.before.txt",
     timestamp="2026-09-26 10:00 UTC",
 )
 out.write_text(html, encoding="utf-8")

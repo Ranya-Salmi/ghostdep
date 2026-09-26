@@ -23,7 +23,9 @@ RADAR_TOP_N: int = 1_000         # compare only against top-N popular packages
 
 # --- Caching ---------------------------------------------------------------
 import os
-CACHE_DIR = os.environ.get("GHOSTDEP_CACHE_DIR", "D:/ghostdep/.cache/ghostdep")
+# Override with the GHOSTDEP_CACHE_DIR environment variable (e.g. to move the
+# cache off a full system drive).
+CACHE_DIR = os.environ.get("GHOSTDEP_CACHE_DIR", "~/.cache/ghostdep")
 CACHE_TTL_SECONDS: int = 3_600  # 1 hour
 
 # --- External APIs ---------------------------------------------------------

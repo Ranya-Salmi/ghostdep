@@ -1,4 +1,2 @@
 requests
-reqeusts
-fastapi-auth-helper-pro
 python-dateutil

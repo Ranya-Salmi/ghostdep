@@ -18,7 +18,8 @@ NPM_MIN_DOWNLOADS_WEEK: int = 500  # weekly downloads via npm download-counts AP
 TOP_LIST_SIZE: int = 5_000  # entries loaded from top_*.txt
 
 # --- Caching ---------------------------------------------------------------
-CACHE_DIR: str = "~/.cache/ghostdep"
+import os
+CACHE_DIR = os.environ.get("GHOSTDEP_CACHE_DIR", "D:/ghostdep/.cache/ghostdep")
 CACHE_TTL_SECONDS: int = 3_600  # 1 hour
 
 # --- External APIs ---------------------------------------------------------

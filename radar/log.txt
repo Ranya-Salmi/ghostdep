@@ -15,3 +15,5 @@ Checked 40 new packages — no typosquats detected.
 === 2026-09-27T15:17:25Z === 40 new of 40 in feed; no lookalikes.
 === 2026-09-27T19:15:11Z === 38 new of 38 in feed; 1 possible lookalike(s):
   fastdar  resembles  fastar
+=== 2026-09-27T22:32:54Z === 32 new of 39 in feed; 1 possible lookalike(s):
+  duva-mail  resembles  dunamai

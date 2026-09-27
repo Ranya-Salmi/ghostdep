@@ -1,10 +1,15 @@
 {
-  "generated_at": "2026-09-27T15:17:25Z",
+  "generated_at": "2026-09-27T19:15:11Z",
   "first_sweep": "2026-09-26T18:42:37Z",
-  "last_sweep": "2026-09-27T15:17:25Z",
-  "sweeps": 7,
-  "packages_checked": 276,
+  "last_sweep": "2026-09-27T19:15:11Z",
+  "sweeps": 8,
+  "packages_checked": 314,
   "lookalikes": [
+    {
+      "name": "fastdar",
+      "resembles": "fastar",
+      "first_seen": "2026-09-27T19:15:11Z"
+    },
     {
       "name": "metrio",
       "resembles": "trio",
@@ -61,6 +66,11 @@
       "at": "2026-09-27T15:17:25Z",
       "new": 40,
       "lookalikes": 0
+    },
+    {
+      "at": "2026-09-27T19:15:11Z",
+      "new": 38,
+      "lookalikes": 1
     }
   ]
 }

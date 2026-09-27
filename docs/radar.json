@@ -1,10 +1,15 @@
 {
-  "generated_at": "2026-09-27T05:12:51Z",
+  "generated_at": "2026-09-27T10:33:35Z",
   "first_sweep": "2026-09-26T18:42:37Z",
-  "last_sweep": "2026-09-27T05:12:51Z",
-  "sweeps": 4,
-  "packages_checked": 157,
+  "last_sweep": "2026-09-27T10:33:35Z",
+  "sweeps": 5,
+  "packages_checked": 197,
   "lookalikes": [
+    {
+      "name": "metrio",
+      "resembles": "trio",
+      "first_seen": "2026-09-27T10:33:35Z"
+    },
     {
       "name": "AZPytest",
       "resembles": "pytest",
@@ -40,6 +45,11 @@
     {
       "at": "2026-09-27T05:12:51Z",
       "new": 39,
+      "lookalikes": 1
+    },
+    {
+      "at": "2026-09-27T10:33:35Z",
+      "new": 40,
       "lookalikes": 1
     }
   ]

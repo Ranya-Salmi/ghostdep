@@ -9,3 +9,5 @@ Checked 40 new packages — no typosquats detected.
 === 2026-09-26T23:51:49Z === 38 new of 38 in feed; no lookalikes.
 === 2026-09-27T05:12:51Z === 39 new of 39 in feed; 1 possible lookalike(s):
   AZPytest  resembles  pytest
+=== 2026-09-27T10:33:35Z === 40 new of 40 in feed; 1 possible lookalike(s):
+  metrio  resembles  trio

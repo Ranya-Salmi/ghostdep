@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-09-29T01:14:46Z",
+  "generated_at": "2026-09-29T07:29:19Z",
   "first_sweep": "2026-09-26T18:42:37Z",
-  "last_sweep": "2026-09-29T01:14:46Z",
-  "sweeps": 14,
-  "packages_checked": 503,
+  "last_sweep": "2026-09-29T07:29:19Z",
+  "sweeps": 15,
+  "packages_checked": 541,
   "lookalikes": [
     {
       "name": "tocparser",
@@ -115,6 +115,11 @@
     {
       "at": "2026-09-29T01:14:46Z",
       "new": 0,
+      "lookalikes": 0
+    },
+    {
+      "at": "2026-09-29T07:29:19Z",
+      "new": 38,
       "lookalikes": 0
     }
   ]

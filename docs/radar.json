@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-09-28T21:22:19Z",
+  "generated_at": "2026-09-29T01:14:46Z",
   "first_sweep": "2026-09-26T18:42:37Z",
-  "last_sweep": "2026-09-28T21:22:19Z",
-  "sweeps": 13,
+  "last_sweep": "2026-09-29T01:14:46Z",
+  "sweeps": 14,
   "packages_checked": 503,
   "lookalikes": [
     {
@@ -110,6 +110,11 @@
     {
       "at": "2026-09-28T21:22:19Z",
       "new": 40,
+      "lookalikes": 0
+    },
+    {
+      "at": "2026-09-29T01:14:46Z",
+      "new": 0,
       "lookalikes": 0
     }
   ]

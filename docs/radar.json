@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-09-30T08:27:02Z",
+  "generated_at": "2026-09-30T15:15:54Z",
   "first_sweep": "2026-09-26T18:42:37Z",
-  "last_sweep": "2026-09-30T08:27:02Z",
-  "sweeps": 20,
-  "packages_checked": 733,
+  "last_sweep": "2026-09-30T15:15:54Z",
+  "sweeps": 21,
+  "packages_checked": 773,
   "lookalikes": [
     {
       "name": "libstb",
@@ -151,6 +151,11 @@
       "at": "2026-09-30T08:27:02Z",
       "new": 38,
       "lookalikes": 1
+    },
+    {
+      "at": "2026-09-30T15:15:54Z",
+      "new": 40,
+      "lookalikes": 0
     }
   ]
 }

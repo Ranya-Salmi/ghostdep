@@ -1,10 +1,15 @@
 {
-  "generated_at": "2026-09-30T02:05:48Z",
+  "generated_at": "2026-09-30T08:27:02Z",
   "first_sweep": "2026-09-26T18:42:37Z",
-  "last_sweep": "2026-09-30T02:05:48Z",
-  "sweeps": 19,
-  "packages_checked": 695,
+  "last_sweep": "2026-09-30T08:27:02Z",
+  "sweeps": 20,
+  "packages_checked": 733,
   "lookalikes": [
+    {
+      "name": "libstb",
+      "resembles": "librt",
+      "first_seen": "2026-09-30T08:27:02Z"
+    },
     {
       "name": "tocparser",
       "resembles": "pycparser",
@@ -141,6 +146,11 @@
       "at": "2026-09-30T02:05:48Z",
       "new": 38,
       "lookalikes": 0
+    },
+    {
+      "at": "2026-09-30T08:27:02Z",
+      "new": 38,
+      "lookalikes": 1
     }
   ]
 }

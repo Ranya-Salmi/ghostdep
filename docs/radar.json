@@ -1,10 +1,15 @@
 {
-  "generated_at": "2026-09-30T15:15:54Z",
+  "generated_at": "2026-09-30T20:17:32Z",
   "first_sweep": "2026-09-26T18:42:37Z",
-  "last_sweep": "2026-09-30T15:15:54Z",
-  "sweeps": 21,
-  "packages_checked": 773,
+  "last_sweep": "2026-09-30T20:17:32Z",
+  "sweeps": 22,
+  "packages_checked": 802,
   "lookalikes": [
+    {
+      "name": "ssebench",
+      "resembles": "swebench",
+      "first_seen": "2026-09-30T20:17:32Z"
+    },
     {
       "name": "libstb",
       "resembles": "librt",
@@ -156,6 +161,11 @@
       "at": "2026-09-30T15:15:54Z",
       "new": 40,
       "lookalikes": 0
+    },
+    {
+      "at": "2026-09-30T20:17:32Z",
+      "new": 29,
+      "lookalikes": 1
     }
   ]
 }

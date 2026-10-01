@@ -39,3 +39,5 @@ Checked 40 new packages — no typosquats detected.
 === 2026-10-01T13:04:54Z === 40 new of 40 in feed; 2 possible lookalike(s):
   sacfpy  resembles  scipy
   goalkit  resembles  tomlkit
+=== 2026-10-01T18:50:36Z === 39 new of 39 in feed; 1 possible lookalike(s):
+  nuppy  resembles  numpy

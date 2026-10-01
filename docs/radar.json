@@ -1,10 +1,15 @@
 {
-  "generated_at": "2026-10-01T13:04:54Z",
+  "generated_at": "2026-10-01T18:50:36Z",
   "first_sweep": "2026-09-26T18:42:37Z",
-  "last_sweep": "2026-10-01T13:04:54Z",
-  "sweeps": 25,
-  "packages_checked": 921,
+  "last_sweep": "2026-10-01T18:50:36Z",
+  "sweeps": 26,
+  "packages_checked": 960,
   "lookalikes": [
+    {
+      "name": "nuppy",
+      "resembles": "numpy",
+      "first_seen": "2026-10-01T18:50:36Z"
+    },
     {
       "name": "sacfpy",
       "resembles": "scipy",
@@ -191,6 +196,11 @@
       "at": "2026-10-01T13:04:54Z",
       "new": 40,
       "lookalikes": 2
+    },
+    {
+      "at": "2026-10-01T18:50:36Z",
+      "new": 39,
+      "lookalikes": 1
     }
   ]
 }

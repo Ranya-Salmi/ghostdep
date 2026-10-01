@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-10-01T00:09:44Z",
+  "generated_at": "2026-10-01T05:45:50Z",
   "first_sweep": "2026-09-26T18:42:37Z",
-  "last_sweep": "2026-10-01T00:09:44Z",
-  "sweeps": 23,
-  "packages_checked": 842,
+  "last_sweep": "2026-10-01T05:45:50Z",
+  "sweeps": 24,
+  "packages_checked": 881,
   "lookalikes": [
     {
       "name": "ssebench",
@@ -170,6 +170,11 @@
     {
       "at": "2026-10-01T00:09:44Z",
       "new": 40,
+      "lookalikes": 0
+    },
+    {
+      "at": "2026-10-01T05:45:50Z",
+      "new": 39,
       "lookalikes": 0
     }
   ]

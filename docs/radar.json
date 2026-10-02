@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-10-02T08:28:39Z",
+  "generated_at": "2026-10-02T14:57:55Z",
   "first_sweep": "2026-09-26T18:42:37Z",
-  "last_sweep": "2026-10-02T08:28:39Z",
-  "sweeps": 29,
-  "packages_checked": 1077,
+  "last_sweep": "2026-10-02T14:57:55Z",
+  "sweeps": 30,
+  "packages_checked": 1117,
   "lookalikes": [
     {
       "name": "covera",
@@ -220,6 +220,11 @@
     {
       "at": "2026-10-02T08:28:39Z",
       "new": 39,
+      "lookalikes": 0
+    },
+    {
+      "at": "2026-10-02T14:57:55Z",
+      "new": 40,
       "lookalikes": 0
     }
   ]

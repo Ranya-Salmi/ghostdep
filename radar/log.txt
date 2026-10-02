@@ -42,3 +42,5 @@ Checked 40 new packages — no typosquats detected.
 === 2026-10-01T18:50:36Z === 39 new of 39 in feed; 1 possible lookalike(s):
   nuppy  resembles  numpy
 === 2026-10-01T23:08:35Z === 39 new of 39 in feed; no lookalikes.
+=== 2026-10-02T02:10:56Z === 39 new of 39 in feed; 1 possible lookalike(s):
+  covera  resembles  coverage

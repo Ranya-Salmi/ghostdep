@@ -1,10 +1,15 @@
 {
-  "generated_at": "2026-10-01T23:08:35Z",
+  "generated_at": "2026-10-02T02:10:56Z",
   "first_sweep": "2026-09-26T18:42:37Z",
-  "last_sweep": "2026-10-01T23:08:35Z",
-  "sweeps": 27,
-  "packages_checked": 999,
+  "last_sweep": "2026-10-02T02:10:56Z",
+  "sweeps": 28,
+  "packages_checked": 1038,
   "lookalikes": [
+    {
+      "name": "covera",
+      "resembles": "coverage",
+      "first_seen": "2026-10-02T02:10:56Z"
+    },
     {
       "name": "nuppy",
       "resembles": "numpy",
@@ -206,6 +211,11 @@
       "at": "2026-10-01T23:08:35Z",
       "new": 39,
       "lookalikes": 0
+    },
+    {
+      "at": "2026-10-02T02:10:56Z",
+      "new": 39,
+      "lookalikes": 1
     }
   ]
 }

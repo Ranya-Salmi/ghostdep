@@ -54,3 +54,5 @@ Checked 40 new packages — no typosquats detected.
 === 2026-10-03T10:23:44Z === 39 new of 39 in feed; no lookalikes.
 === 2026-10-03T14:53:23Z === 39 new of 39 in feed; no lookalikes.
 === 2026-10-03T18:40:01Z === 40 new of 40 in feed; no lookalikes.
+=== 2026-10-03T21:44:35Z === 40 new of 40 in feed; 1 possible lookalike(s):
+  babeldb  resembles  babel

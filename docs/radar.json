@@ -1,10 +1,20 @@
 {
-  "generated_at": "2026-10-02T23:44:53Z",
+  "generated_at": "2026-10-03T05:11:30Z",
   "first_sweep": "2026-09-26T18:42:37Z",
-  "last_sweep": "2026-10-02T23:44:53Z",
-  "sweeps": 32,
-  "packages_checked": 1196,
+  "last_sweep": "2026-10-03T05:11:30Z",
+  "sweeps": 33,
+  "packages_checked": 1236,
   "lookalikes": [
+    {
+      "name": "dist-moe",
+      "resembles": "distro",
+      "first_seen": "2026-10-03T05:11:30Z"
+    },
+    {
+      "name": "pydpop",
+      "resembles": "pydot",
+      "first_seen": "2026-10-03T05:11:30Z"
+    },
     {
       "name": "covera",
       "resembles": "coverage",
@@ -236,6 +246,11 @@
       "at": "2026-10-02T23:44:53Z",
       "new": 39,
       "lookalikes": 0
+    },
+    {
+      "at": "2026-10-03T05:11:30Z",
+      "new": 40,
+      "lookalikes": 2
     }
   ]
 }

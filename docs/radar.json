@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-10-03T05:11:30Z",
+  "generated_at": "2026-10-03T10:23:44Z",
   "first_sweep": "2026-09-26T18:42:37Z",
-  "last_sweep": "2026-10-03T05:11:30Z",
-  "sweeps": 33,
-  "packages_checked": 1236,
+  "last_sweep": "2026-10-03T10:23:44Z",
+  "sweeps": 34,
+  "packages_checked": 1275,
   "lookalikes": [
     {
       "name": "dist-moe",
@@ -251,6 +251,11 @@
       "at": "2026-10-03T05:11:30Z",
       "new": 40,
       "lookalikes": 2
+    },
+    {
+      "at": "2026-10-03T10:23:44Z",
+      "new": 39,
+      "lookalikes": 0
     }
   ]
 }

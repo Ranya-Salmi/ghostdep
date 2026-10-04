@@ -56,3 +56,5 @@ Checked 40 new packages — no typosquats detected.
 === 2026-10-03T18:40:01Z === 40 new of 40 in feed; no lookalikes.
 === 2026-10-03T21:44:35Z === 40 new of 40 in feed; 1 possible lookalike(s):
   babeldb  resembles  babel
+=== 2026-10-04T00:33:40Z === 40 new of 40 in feed; 1 possible lookalike(s):
+  sola-base  resembles  supabase

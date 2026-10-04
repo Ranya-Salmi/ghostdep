@@ -1,10 +1,15 @@
 {
-  "generated_at": "2026-10-03T21:44:35Z",
+  "generated_at": "2026-10-04T00:33:40Z",
   "first_sweep": "2026-09-26T18:42:37Z",
-  "last_sweep": "2026-10-03T21:44:35Z",
-  "sweeps": 37,
-  "packages_checked": 1394,
+  "last_sweep": "2026-10-04T00:33:40Z",
+  "sweeps": 38,
+  "packages_checked": 1434,
   "lookalikes": [
+    {
+      "name": "sola-base",
+      "resembles": "supabase",
+      "first_seen": "2026-10-04T00:33:40Z"
+    },
     {
       "name": "babeldb",
       "resembles": "babel",
@@ -274,6 +279,11 @@
     },
     {
       "at": "2026-10-03T21:44:35Z",
+      "new": 40,
+      "lookalikes": 1
+    },
+    {
+      "at": "2026-10-04T00:33:40Z",
       "new": 40,
       "lookalikes": 1
     }

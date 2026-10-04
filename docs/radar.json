@@ -1,10 +1,15 @@
 {
-  "generated_at": "2026-10-04T12:50:11Z",
+  "generated_at": "2026-10-04T17:33:05Z",
   "first_sweep": "2026-09-26T18:42:37Z",
-  "last_sweep": "2026-10-04T12:50:11Z",
-  "sweeps": 40,
-  "packages_checked": 1513,
+  "last_sweep": "2026-10-04T17:33:05Z",
+  "sweeps": 41,
+  "packages_checked": 1553,
   "lookalikes": [
+    {
+      "name": "datajig",
+      "resembles": "datadog",
+      "first_seen": "2026-10-04T17:33:05Z"
+    },
     {
       "name": "retexo",
       "resembles": "regex",
@@ -300,6 +305,11 @@
     {
       "at": "2026-10-04T12:50:11Z",
       "new": 39,
+      "lookalikes": 1
+    },
+    {
+      "at": "2026-10-04T17:33:05Z",
+      "new": 40,
       "lookalikes": 1
     }
   ]

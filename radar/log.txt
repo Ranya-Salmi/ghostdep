@@ -59,3 +59,5 @@ Checked 40 new packages — no typosquats detected.
 === 2026-10-04T00:33:40Z === 40 new of 40 in feed; 1 possible lookalike(s):
   sola-base  resembles  supabase
 === 2026-10-04T06:18:27Z === 40 new of 40 in feed; no lookalikes.
+=== 2026-10-04T12:50:11Z === 39 new of 39 in feed; 1 possible lookalike(s):
+  retexo  resembles  regex

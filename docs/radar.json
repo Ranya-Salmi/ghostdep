@@ -1,10 +1,15 @@
 {
-  "generated_at": "2026-10-05T02:22:25Z",
+  "generated_at": "2026-10-05T09:35:20Z",
   "first_sweep": "2026-09-26T18:42:37Z",
-  "last_sweep": "2026-10-05T02:22:25Z",
-  "sweeps": 44,
-  "packages_checked": 1672,
+  "last_sweep": "2026-10-05T09:35:20Z",
+  "sweeps": 45,
+  "packages_checked": 1712,
   "lookalikes": [
+    {
+      "name": "cfloop",
+      "resembles": "uvloop",
+      "first_seen": "2026-10-05T09:35:20Z"
+    },
     {
       "name": "datajig",
       "resembles": "datadog",
@@ -326,6 +331,11 @@
       "at": "2026-10-05T02:22:25Z",
       "new": 40,
       "lookalikes": 0
+    },
+    {
+      "at": "2026-10-05T09:35:20Z",
+      "new": 40,
+      "lookalikes": 1
     }
   ]
 }

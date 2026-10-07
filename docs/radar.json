@@ -1,10 +1,15 @@
 {
-  "generated_at": "2026-10-07T19:30:56Z",
+  "generated_at": "2026-10-07T23:48:06Z",
   "first_sweep": "2026-09-26T18:42:37Z",
-  "last_sweep": "2026-10-07T19:30:56Z",
-  "sweeps": 54,
-  "packages_checked": 2060,
+  "last_sweep": "2026-10-07T23:48:06Z",
+  "sweeps": 55,
+  "packages_checked": 2100,
   "lookalikes": [
+    {
+      "name": "agy-mem",
+      "resembles": "cymem",
+      "first_seen": "2026-10-07T23:48:06Z"
+    },
     {
       "name": "cellenium",
       "resembles": "selenium",
@@ -122,11 +127,6 @@
     }
   ],
   "recent_sweeps": [
-    {
-      "at": "2026-09-27T15:17:25Z",
-      "new": 40,
-      "lookalikes": 0
-    },
     {
       "at": "2026-09-27T19:15:11Z",
       "new": 38,
@@ -361,6 +361,11 @@
       "at": "2026-10-07T19:30:56Z",
       "new": 38,
       "lookalikes": 0
+    },
+    {
+      "at": "2026-10-07T23:48:06Z",
+      "new": 40,
+      "lookalikes": 1
     }
   ]
 }

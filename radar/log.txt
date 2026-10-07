@@ -79,3 +79,5 @@ Checked 40 new packages — no typosquats detected.
 === 2026-10-07T13:14:16Z === 38 new of 38 in feed; 1 possible lookalike(s):
   cellenium  resembles  selenium
 === 2026-10-07T19:30:56Z === 38 new of 38 in feed; no lookalikes.
+=== 2026-10-07T23:48:06Z === 40 new of 40 in feed; 1 possible lookalike(s):
+  agy-mem  resembles  cymem

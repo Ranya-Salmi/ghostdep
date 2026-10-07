@@ -1,10 +1,15 @@
 {
-  "generated_at": "2026-10-07T05:50:11Z",
+  "generated_at": "2026-10-07T13:14:16Z",
   "first_sweep": "2026-09-26T18:42:37Z",
-  "last_sweep": "2026-10-07T05:50:11Z",
-  "sweeps": 52,
-  "packages_checked": 1984,
+  "last_sweep": "2026-10-07T13:14:16Z",
+  "sweeps": 53,
+  "packages_checked": 2022,
   "lookalikes": [
+    {
+      "name": "cellenium",
+      "resembles": "selenium",
+      "first_seen": "2026-10-07T13:14:16Z"
+    },
     {
       "name": "tosa-ml",
       "resembles": "toml",
@@ -117,11 +122,6 @@
     }
   ],
   "recent_sweeps": [
-    {
-      "at": "2026-09-27T10:33:35Z",
-      "new": 40,
-      "lookalikes": 1
-    },
     {
       "at": "2026-09-27T10:35:15Z",
       "new": 39,
@@ -355,6 +355,11 @@
     {
       "at": "2026-10-07T05:50:11Z",
       "new": 40,
+      "lookalikes": 1
+    },
+    {
+      "at": "2026-10-07T13:14:16Z",
+      "new": 38,
       "lookalikes": 1
     }
   ]

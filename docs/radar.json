@@ -1,10 +1,15 @@
 {
-  "generated_at": "2026-10-06T23:46:01Z",
+  "generated_at": "2026-10-07T05:50:11Z",
   "first_sweep": "2026-09-26T18:42:37Z",
-  "last_sweep": "2026-10-06T23:46:01Z",
-  "sweeps": 51,
-  "packages_checked": 1944,
+  "last_sweep": "2026-10-07T05:50:11Z",
+  "sweeps": 52,
+  "packages_checked": 1984,
   "lookalikes": [
+    {
+      "name": "tosa-ml",
+      "resembles": "toml",
+      "first_seen": "2026-10-07T05:50:11Z"
+    },
     {
       "name": "cfloop",
       "resembles": "uvloop",
@@ -112,11 +117,6 @@
     }
   ],
   "recent_sweeps": [
-    {
-      "at": "2026-09-27T05:12:51Z",
-      "new": 39,
-      "lookalikes": 1
-    },
     {
       "at": "2026-09-27T10:33:35Z",
       "new": 40,
@@ -351,6 +351,11 @@
       "at": "2026-10-06T23:46:01Z",
       "new": 39,
       "lookalikes": 0
+    },
+    {
+      "at": "2026-10-07T05:50:11Z",
+      "new": 40,
+      "lookalikes": 1
     }
   ]
 }

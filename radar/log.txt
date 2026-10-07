@@ -74,3 +74,5 @@ Checked 40 new packages — no typosquats detected.
 === 2026-10-06T14:27:09Z === 38 new of 38 in feed; no lookalikes.
 === 2026-10-06T19:48:17Z === 38 new of 38 in feed; no lookalikes.
 === 2026-10-06T23:46:01Z === 39 new of 39 in feed; no lookalikes.
+=== 2026-10-07T05:50:11Z === 40 new of 40 in feed; 1 possible lookalike(s):
+  tosa-ml  resembles  toml

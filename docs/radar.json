@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-10-09T13:09:14Z",
+  "generated_at": "2026-10-09T18:47:16Z",
   "first_sweep": "2026-09-26T18:42:37Z",
-  "last_sweep": "2026-10-09T13:09:14Z",
-  "sweeps": 61,
-  "packages_checked": 2301,
+  "last_sweep": "2026-10-09T18:47:16Z",
+  "sweeps": 62,
+  "packages_checked": 2341,
   "lookalikes": [
     {
       "name": "agy-mem",
@@ -127,11 +127,6 @@
     }
   ],
   "recent_sweeps": [
-    {
-      "at": "2026-09-29T01:14:46Z",
-      "new": 0,
-      "lookalikes": 0
-    },
     {
       "at": "2026-09-29T07:29:19Z",
       "new": 38,
@@ -365,6 +360,11 @@
     {
       "at": "2026-10-09T13:09:14Z",
       "new": 39,
+      "lookalikes": 0
+    },
+    {
+      "at": "2026-10-09T18:47:16Z",
+      "new": 40,
       "lookalikes": 0
     }
   ]

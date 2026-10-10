@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-10-10T02:19:36Z",
+  "generated_at": "2026-10-10T08:57:31Z",
   "first_sweep": "2026-09-26T18:42:37Z",
-  "last_sweep": "2026-10-10T02:19:36Z",
-  "sweeps": 64,
-  "packages_checked": 2417,
+  "last_sweep": "2026-10-10T08:57:31Z",
+  "sweeps": 65,
+  "packages_checked": 2456,
   "lookalikes": [
     {
       "name": "vitrio",
@@ -132,11 +132,6 @@
     }
   ],
   "recent_sweeps": [
-    {
-      "at": "2026-09-29T19:38:58Z",
-      "new": 38,
-      "lookalikes": 0
-    },
     {
       "at": "2026-09-29T23:11:36Z",
       "new": 40,
@@ -369,6 +364,11 @@
     },
     {
       "at": "2026-10-10T02:19:36Z",
+      "new": 39,
+      "lookalikes": 0
+    },
+    {
+      "at": "2026-10-10T08:57:31Z",
       "new": 39,
       "lookalikes": 0
     }

@@ -103,3 +103,6 @@ Checked 40 new packages — no typosquats detected.
 === 2026-10-11T19:42:26Z === 40 new of 40 in feed; no lookalikes.
 === 2026-10-11T23:10:29Z === 40 new of 40 in feed; 1 possible lookalike(s):
   sc-lint  resembles  pylint
+=== 2026-10-12T02:21:05Z === 40 new of 40 in feed; 2 possible lookalike(s):
+  openavt  resembles  openai
+  standard  resembles  zstandard

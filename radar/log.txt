@@ -106,3 +106,6 @@ Checked 40 new packages — no typosquats detected.
 === 2026-10-12T02:21:05Z === 40 new of 40 in feed; 2 possible lookalike(s):
   openavt  resembles  openai
   standard  resembles  zstandard
+=== 2026-10-12T09:43:38Z === 39 new of 39 in feed; 2 possible lookalike(s):
+  qg-python  resembles  ipython
+  fastesp  resembles  fastmcp

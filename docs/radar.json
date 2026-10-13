@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-10-12T19:46:54Z",
+  "generated_at": "2026-10-13T01:59:23Z",
   "first_sweep": "2026-09-26T18:42:37Z",
-  "last_sweep": "2026-10-12T19:46:54Z",
-  "sweeps": 76,
-  "packages_checked": 2885,
+  "last_sweep": "2026-10-13T01:59:23Z",
+  "sweeps": 77,
+  "packages_checked": 2925,
   "lookalikes": [
     {
       "name": "ritk-python",
@@ -172,11 +172,6 @@
     }
   ],
   "recent_sweeps": [
-    {
-      "at": "2026-10-02T08:28:39Z",
-      "new": 39,
-      "lookalikes": 0
-    },
     {
       "at": "2026-10-02T14:57:55Z",
       "new": 40,
@@ -411,6 +406,11 @@
       "at": "2026-10-12T19:46:54Z",
       "new": 40,
       "lookalikes": 1
+    },
+    {
+      "at": "2026-10-13T01:59:23Z",
+      "new": 40,
+      "lookalikes": 0
     }
   ]
 }

@@ -115,3 +115,6 @@ Checked 40 new packages — no typosquats detected.
 === 2026-10-13T09:20:35Z === 39 new of 39 in feed; no lookalikes.
 === 2026-10-13T17:07:30Z === 39 new of 39 in feed; no lookalikes.
 === 2026-10-13T21:49:29Z === 39 new of 39 in feed; no lookalikes.
+=== 2026-10-14T01:10:59Z === 40 new of 40 in feed; 2 possible lookalike(s):
+  fam-mcp  resembles  fastmcp
+  bistra  resembles  distro

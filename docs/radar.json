@@ -1,10 +1,20 @@
 {
-  "generated_at": "2026-10-13T21:49:29Z",
+  "generated_at": "2026-10-14T01:10:59Z",
   "first_sweep": "2026-09-26T18:42:37Z",
-  "last_sweep": "2026-10-13T21:49:29Z",
-  "sweeps": 80,
-  "packages_checked": 3042,
+  "last_sweep": "2026-10-14T01:10:59Z",
+  "sweeps": 81,
+  "packages_checked": 3082,
   "lookalikes": [
+    {
+      "name": "fam-mcp",
+      "resembles": "fastmcp",
+      "first_seen": "2026-10-14T01:10:59Z"
+    },
+    {
+      "name": "bistra",
+      "resembles": "distro",
+      "first_seen": "2026-10-14T01:10:59Z"
+    },
     {
       "name": "ritk-python",
       "resembles": "gitpython",
@@ -172,11 +182,6 @@
     }
   ],
   "recent_sweeps": [
-    {
-      "at": "2026-10-03T05:11:30Z",
-      "new": 40,
-      "lookalikes": 2
-    },
     {
       "at": "2026-10-03T10:23:44Z",
       "new": 39,
@@ -411,6 +416,11 @@
       "at": "2026-10-13T21:49:29Z",
       "new": 39,
       "lookalikes": 0
+    },
+    {
+      "at": "2026-10-14T01:10:59Z",
+      "new": 40,
+      "lookalikes": 2
     }
   ]
 }

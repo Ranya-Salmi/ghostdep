@@ -1,10 +1,20 @@
 {
-  "generated_at": "2026-10-15T01:48:36Z",
+  "generated_at": "2026-10-15T07:21:39Z",
   "first_sweep": "2026-09-26T18:42:37Z",
-  "last_sweep": "2026-10-15T01:48:36Z",
-  "sweeps": 87,
-  "packages_checked": 3317,
+  "last_sweep": "2026-10-15T07:21:39Z",
+  "sweeps": 88,
+  "packages_checked": 3357,
   "lookalikes": [
+    {
+      "name": "py-sock2",
+      "resembles": "pysocks",
+      "first_seen": "2026-10-15T07:21:39Z"
+    },
+    {
+      "name": "tolint",
+      "resembles": "pylint",
+      "first_seen": "2026-10-15T07:21:39Z"
+    },
     {
       "name": "scatrs",
       "resembles": "cattrs",
@@ -187,11 +197,6 @@
     }
   ],
   "recent_sweeps": [
-    {
-      "at": "2026-10-04T12:50:11Z",
-      "new": 39,
-      "lookalikes": 1
-    },
     {
       "at": "2026-10-04T17:33:05Z",
       "new": 40,
@@ -426,6 +431,11 @@
       "at": "2026-10-15T01:48:36Z",
       "new": 40,
       "lookalikes": 0
+    },
+    {
+      "at": "2026-10-15T07:21:39Z",
+      "new": 40,
+      "lookalikes": 2
     }
   ]
 }

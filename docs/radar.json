@@ -1,10 +1,15 @@
 {
-  "generated_at": "2026-10-16T04:24:10Z",
+  "generated_at": "2026-10-16T09:16:29Z",
   "first_sweep": "2026-09-26T18:42:37Z",
-  "last_sweep": "2026-10-16T04:24:10Z",
-  "sweeps": 93,
-  "packages_checked": 3556,
+  "last_sweep": "2026-10-16T09:16:29Z",
+  "sweeps": 94,
+  "packages_checked": 3589,
   "lookalikes": [
+    {
+      "name": "openhaz",
+      "resembles": "openai",
+      "first_seen": "2026-10-16T09:16:29Z"
+    },
     {
       "name": "schemmy",
       "resembles": "schema",
@@ -217,11 +222,6 @@
     }
   ],
   "recent_sweeps": [
-    {
-      "at": "2026-10-05T18:49:17Z",
-      "new": 40,
-      "lookalikes": 0
-    },
     {
       "at": "2026-10-06T00:46:12Z",
       "new": 40,
@@ -456,6 +456,11 @@
       "at": "2026-10-16T04:24:10Z",
       "new": 40,
       "lookalikes": 3
+    },
+    {
+      "at": "2026-10-16T09:16:29Z",
+      "new": 33,
+      "lookalikes": 1
     }
   ]
 }

@@ -137,3 +137,5 @@ Checked 40 new packages — no typosquats detected.
   schemmy  resembles  schema
   ohapi  resembles  ghapi
   drfast-api  resembles  fastapi
+=== 2026-10-16T09:16:29Z === 33 new of 40 in feed; 1 possible lookalike(s):
+  openhaz  resembles  openai

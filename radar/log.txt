@@ -143,3 +143,6 @@ Checked 40 new packages — no typosquats detected.
   semdex  resembles  semver
 === 2026-10-16T18:03:15Z === 39 new of 39 in feed; no lookalikes.
 === 2026-10-16T21:01:20Z === 39 new of 39 in feed; no lookalikes.
+=== 2026-10-16T23:32:06Z === 40 new of 40 in feed; 2 possible lookalike(s):
+  postshor  resembles  posthog
+  matchline  resembles  hatchling

@@ -1,10 +1,25 @@
 {
-  "generated_at": "2026-10-15T23:49:37Z",
+  "generated_at": "2026-10-16T04:24:10Z",
   "first_sweep": "2026-09-26T18:42:37Z",
-  "last_sweep": "2026-10-15T23:49:37Z",
-  "sweeps": 92,
-  "packages_checked": 3516,
+  "last_sweep": "2026-10-16T04:24:10Z",
+  "sweeps": 93,
+  "packages_checked": 3556,
   "lookalikes": [
+    {
+      "name": "schemmy",
+      "resembles": "schema",
+      "first_seen": "2026-10-16T04:24:10Z"
+    },
+    {
+      "name": "ohapi",
+      "resembles": "ghapi",
+      "first_seen": "2026-10-16T04:24:10Z"
+    },
+    {
+      "name": "drfast-api",
+      "resembles": "fastapi",
+      "first_seen": "2026-10-16T04:24:10Z"
+    },
     {
       "name": "alembra",
       "resembles": "alembic",
@@ -202,11 +217,6 @@
     }
   ],
   "recent_sweeps": [
-    {
-      "at": "2026-10-05T09:35:20Z",
-      "new": 40,
-      "lookalikes": 1
-    },
     {
       "at": "2026-10-05T18:49:17Z",
       "new": 40,
@@ -441,6 +451,11 @@
       "at": "2026-10-15T23:49:37Z",
       "new": 40,
       "lookalikes": 1
+    },
+    {
+      "at": "2026-10-16T04:24:10Z",
+      "new": 40,
+      "lookalikes": 3
     }
   ]
 }

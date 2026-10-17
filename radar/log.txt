@@ -146,3 +146,5 @@ Checked 40 new packages — no typosquats detected.
 === 2026-10-16T23:32:06Z === 40 new of 40 in feed; 2 possible lookalike(s):
   postshor  resembles  posthog
   matchline  resembles  hatchling
+=== 2026-10-17T01:31:07Z === 39 new of 39 in feed; 1 possible lookalike(s):
+  langchain-s1  resembles  langchain

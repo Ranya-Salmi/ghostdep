@@ -155,3 +155,6 @@ Checked 40 new packages — no typosquats detected.
 === 2026-10-17T17:06:04Z === 40 new of 40 in feed; no lookalikes.
 === 2026-10-17T19:19:11Z === 39 new of 39 in feed; 1 possible lookalike(s):
   hatcheck  resembles  hatch-vcs
+=== 2026-10-17T21:43:15Z === 40 new of 40 in feed; 2 possible lookalike(s):
+  plantgraph  resembles  langgraph
+  st-flow  resembles  mlflow

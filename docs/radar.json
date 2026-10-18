@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-10-17T21:43:15Z",
+  "generated_at": "2026-10-18T00:00:29Z",
   "first_sweep": "2026-09-26T18:42:37Z",
-  "last_sweep": "2026-10-17T21:43:15Z",
-  "sweeps": 105,
-  "packages_checked": 3996,
+  "last_sweep": "2026-10-18T00:00:29Z",
+  "sweeps": 106,
+  "packages_checked": 4035,
   "lookalikes": [
     {
       "name": "plantgraph",
@@ -263,11 +263,6 @@
   ],
   "recent_sweeps": [
     {
-      "at": "2026-10-08T19:25:07Z",
-      "new": 40,
-      "lookalikes": 0
-    },
-    {
       "at": "2026-10-08T23:56:18Z",
       "new": 36,
       "lookalikes": 0
@@ -501,6 +496,11 @@
       "at": "2026-10-17T21:43:15Z",
       "new": 40,
       "lookalikes": 2
+    },
+    {
+      "at": "2026-10-18T00:00:29Z",
+      "new": 39,
+      "lookalikes": 0
     }
   ]
 }

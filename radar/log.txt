@@ -170,3 +170,5 @@ Checked 40 new packages — no typosquats detected.
   factory-bot  resembles  factory-boy
 === 2026-10-19T10:15:43Z === 39 new of 39 in feed; 1 possible lookalike(s):
   ffdata  resembles  tzdata
+=== 2026-10-19T17:08:56Z === 39 new of 39 in feed; 1 possible lookalike(s):
+  pila-ai  resembles  pip-api

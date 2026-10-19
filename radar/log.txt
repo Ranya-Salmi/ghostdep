@@ -168,3 +168,5 @@ Checked 40 new packages — no typosquats detected.
 === 2026-10-19T00:11:40Z === 40 new of 40 in feed; no lookalikes.
 === 2026-10-19T04:37:20Z === 40 new of 40 in feed; 1 possible lookalike(s):
   factory-bot  resembles  factory-boy
+=== 2026-10-19T10:15:43Z === 39 new of 39 in feed; 1 possible lookalike(s):
+  ffdata  resembles  tzdata

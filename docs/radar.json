@@ -1,10 +1,15 @@
 {
-  "generated_at": "2026-10-19T04:37:20Z",
+  "generated_at": "2026-10-19T10:15:43Z",
   "first_sweep": "2026-09-26T18:42:37Z",
-  "last_sweep": "2026-10-19T04:37:20Z",
-  "sweeps": 114,
-  "packages_checked": 4328,
+  "last_sweep": "2026-10-19T10:15:43Z",
+  "sweeps": 115,
+  "packages_checked": 4367,
   "lookalikes": [
+    {
+      "name": "ffdata",
+      "resembles": "tzdata",
+      "first_seen": "2026-10-19T10:15:43Z"
+    },
     {
       "name": "factory-bot",
       "resembles": "factory-boy",
@@ -268,11 +273,6 @@
   ],
   "recent_sweeps": [
     {
-      "at": "2026-10-10T19:30:20Z",
-      "new": 39,
-      "lookalikes": 0
-    },
-    {
       "at": "2026-10-10T22:54:57Z",
       "new": 39,
       "lookalikes": 1
@@ -505,6 +505,11 @@
     {
       "at": "2026-10-19T04:37:20Z",
       "new": 40,
+      "lookalikes": 1
+    },
+    {
+      "at": "2026-10-19T10:15:43Z",
+      "new": 39,
       "lookalikes": 1
     }
   ]

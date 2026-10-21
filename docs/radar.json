@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-10-21T20:06:09Z",
+  "generated_at": "2026-10-21T23:14:31Z",
   "first_sweep": "2026-09-26T18:42:37Z",
-  "last_sweep": "2026-10-21T20:06:09Z",
-  "sweeps": 128,
-  "packages_checked": 4880,
+  "last_sweep": "2026-10-21T23:14:31Z",
+  "sweeps": 129,
+  "packages_checked": 4920,
   "lookalikes": [
     {
       "name": "oro-cli",
@@ -293,11 +293,6 @@
   ],
   "recent_sweeps": [
     {
-      "at": "2026-10-14T01:10:59Z",
-      "new": 40,
-      "lookalikes": 2
-    },
-    {
       "at": "2026-10-14T06:07:30Z",
       "new": 36,
       "lookalikes": 0
@@ -531,6 +526,11 @@
       "at": "2026-10-21T20:06:09Z",
       "new": 40,
       "lookalikes": 1
+    },
+    {
+      "at": "2026-10-21T23:14:31Z",
+      "new": 40,
+      "lookalikes": 0
     }
   ]
 }

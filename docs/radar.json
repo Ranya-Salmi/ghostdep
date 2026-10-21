@@ -1,10 +1,15 @@
 {
-  "generated_at": "2026-10-21T16:06:14Z",
+  "generated_at": "2026-10-21T20:06:09Z",
   "first_sweep": "2026-09-26T18:42:37Z",
-  "last_sweep": "2026-10-21T16:06:14Z",
-  "sweeps": 127,
-  "packages_checked": 4840,
+  "last_sweep": "2026-10-21T20:06:09Z",
+  "sweeps": 128,
+  "packages_checked": 4880,
   "lookalikes": [
+    {
+      "name": "oro-cli",
+      "resembles": "brotli",
+      "first_seen": "2026-10-21T20:06:09Z"
+    },
     {
       "name": "pyr4py",
       "resembles": "py-spy",
@@ -288,11 +293,6 @@
   ],
   "recent_sweeps": [
     {
-      "at": "2026-10-13T21:49:29Z",
-      "new": 39,
-      "lookalikes": 0
-    },
-    {
       "at": "2026-10-14T01:10:59Z",
       "new": 40,
       "lookalikes": 2
@@ -526,6 +526,11 @@
       "at": "2026-10-21T16:06:14Z",
       "new": 40,
       "lookalikes": 0
+    },
+    {
+      "at": "2026-10-21T20:06:09Z",
+      "new": 40,
+      "lookalikes": 1
     }
   ]
 }

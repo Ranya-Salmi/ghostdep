@@ -185,3 +185,5 @@ Checked 40 new packages — no typosquats detected.
 === 2026-10-21T11:40:53Z === 40 new of 40 in feed; 1 possible lookalike(s):
   pyr4py  resembles  py-spy
 === 2026-10-21T16:06:14Z === 40 new of 40 in feed; no lookalikes.
+=== 2026-10-21T20:06:09Z === 40 new of 40 in feed; 1 possible lookalike(s):
+  oro-cli  resembles  brotli

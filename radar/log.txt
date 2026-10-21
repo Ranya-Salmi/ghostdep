@@ -182,3 +182,5 @@ Checked 40 new packages — no typosquats detected.
 === 2026-10-21T00:53:44Z === 39 new of 39 in feed; no lookalikes.
 === 2026-10-21T05:58:54Z === 39 new of 39 in feed; 1 possible lookalike(s):
   busabase  resembles  supabase
+=== 2026-10-21T11:40:53Z === 40 new of 40 in feed; 1 possible lookalike(s):
+  pyr4py  resembles  py-spy

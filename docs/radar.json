@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-10-20T22:38:00Z",
+  "generated_at": "2026-10-21T00:53:44Z",
   "first_sweep": "2026-09-26T18:42:37Z",
-  "last_sweep": "2026-10-20T22:38:00Z",
-  "sweeps": 123,
-  "packages_checked": 4682,
+  "last_sweep": "2026-10-21T00:53:44Z",
+  "sweeps": 124,
+  "packages_checked": 4721,
   "lookalikes": [
     {
       "name": "pila-ai",
@@ -278,11 +278,6 @@
   ],
   "recent_sweeps": [
     {
-      "at": "2026-10-12T19:46:54Z",
-      "new": 40,
-      "lookalikes": 1
-    },
-    {
       "at": "2026-10-13T01:59:23Z",
       "new": 40,
       "lookalikes": 0
@@ -515,6 +510,11 @@
     {
       "at": "2026-10-20T22:38:00Z",
       "new": 40,
+      "lookalikes": 0
+    },
+    {
+      "at": "2026-10-21T00:53:44Z",
+      "new": 39,
       "lookalikes": 0
     }
   ]

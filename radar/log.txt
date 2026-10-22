@@ -195,3 +195,6 @@ Checked 40 new packages — no typosquats detected.
   aanthropic  resembles  anthropic
   fastpg  resembles  fastapi
 === 2026-10-22T17:58:05Z === 40 new of 40 in feed; no lookalikes.
+=== 2026-10-22T21:30:06Z === 40 new of 40 in feed; 2 possible lookalike(s):
+  fss-cli  resembles  awscli
+  wicket  resembles  locket

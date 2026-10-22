@@ -1,10 +1,20 @@
 {
-  "generated_at": "2026-10-22T17:58:05Z",
+  "generated_at": "2026-10-22T21:30:06Z",
   "first_sweep": "2026-09-26T18:42:37Z",
-  "last_sweep": "2026-10-22T17:58:05Z",
-  "sweeps": 133,
-  "packages_checked": 5080,
+  "last_sweep": "2026-10-22T21:30:06Z",
+  "sweeps": 134,
+  "packages_checked": 5120,
   "lookalikes": [
+    {
+      "name": "fss-cli",
+      "resembles": "awscli",
+      "first_seen": "2026-10-22T21:30:06Z"
+    },
+    {
+      "name": "wicket",
+      "resembles": "locket",
+      "first_seen": "2026-10-22T21:30:06Z"
+    },
     {
       "name": "aanthropic",
       "resembles": "anthropic",
@@ -308,11 +318,6 @@
   ],
   "recent_sweeps": [
     {
-      "at": "2026-10-14T23:26:07Z",
-      "new": 40,
-      "lookalikes": 0
-    },
-    {
       "at": "2026-10-15T01:48:36Z",
       "new": 40,
       "lookalikes": 0
@@ -546,6 +551,11 @@
       "at": "2026-10-22T17:58:05Z",
       "new": 40,
       "lookalikes": 0
+    },
+    {
+      "at": "2026-10-22T21:30:06Z",
+      "new": 40,
+      "lookalikes": 2
     }
   ]
 }

@@ -194,3 +194,4 @@ Checked 40 new packages — no typosquats detected.
 === 2026-10-22T13:11:15Z === 40 new of 40 in feed; 2 possible lookalike(s):
   aanthropic  resembles  anthropic
   fastpg  resembles  fastapi
+=== 2026-10-22T17:58:05Z === 40 new of 40 in feed; no lookalikes.

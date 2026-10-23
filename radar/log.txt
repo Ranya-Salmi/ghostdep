@@ -198,3 +198,5 @@ Checked 40 new packages — no typosquats detected.
 === 2026-10-22T21:30:06Z === 40 new of 40 in feed; 2 possible lookalike(s):
   fss-cli  resembles  awscli
   wicket  resembles  locket
+=== 2026-10-23T00:08:37Z === 32 new of 39 in feed; 1 possible lookalike(s):
+  bbcrypt  resembles  bcrypt

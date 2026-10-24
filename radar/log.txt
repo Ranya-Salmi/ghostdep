@@ -214,3 +214,5 @@ Checked 40 new packages — no typosquats detected.
 === 2026-10-24T19:27:50Z === 39 new of 39 in feed; 2 possible lookalike(s):
   brotli-rs  resembles  brotli
   torch-lb  resembles  torch
+=== 2026-10-24T21:51:41Z === 40 new of 40 in feed; 1 possible lookalike(s):
+  ftask  resembles  flask

@@ -211,3 +211,6 @@ Checked 40 new packages — no typosquats detected.
 === 2026-10-24T13:16:50Z === 39 new of 39 in feed; 1 possible lookalike(s):
   bats-core  resembles  botocore
 === 2026-10-24T16:56:05Z === 39 new of 39 in feed; no lookalikes.
+=== 2026-10-24T19:27:50Z === 39 new of 39 in feed; 2 possible lookalike(s):
+  brotli-rs  resembles  brotli
+  torch-lb  resembles  torch

@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-10-23T21:41:03Z",
+  "generated_at": "2026-10-24T00:01:28Z",
   "first_sweep": "2026-09-26T18:42:37Z",
-  "last_sweep": "2026-10-23T21:41:03Z",
-  "sweeps": 140,
-  "packages_checked": 5348,
+  "last_sweep": "2026-10-24T00:01:28Z",
+  "sweeps": 141,
+  "packages_checked": 5388,
   "lookalikes": [
     {
       "name": "bbcrypt",
@@ -323,11 +323,6 @@
   ],
   "recent_sweeps": [
     {
-      "at": "2026-10-16T04:24:10Z",
-      "new": 40,
-      "lookalikes": 3
-    },
-    {
       "at": "2026-10-16T09:16:29Z",
       "new": 33,
       "lookalikes": 1
@@ -559,6 +554,11 @@
     },
     {
       "at": "2026-10-23T21:41:03Z",
+      "new": 40,
+      "lookalikes": 0
+    },
+    {
+      "at": "2026-10-24T00:01:28Z",
       "new": 40,
       "lookalikes": 0
     }

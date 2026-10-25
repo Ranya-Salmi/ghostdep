@@ -1,10 +1,15 @@
 {
-  "generated_at": "2026-10-25T17:50:42Z",
+  "generated_at": "2026-10-25T20:46:10Z",
   "first_sweep": "2026-09-26T18:42:37Z",
-  "last_sweep": "2026-10-25T17:50:42Z",
-  "sweeps": 152,
-  "packages_checked": 5821,
+  "last_sweep": "2026-10-25T20:46:10Z",
+  "sweeps": 153,
+  "packages_checked": 5861,
   "lookalikes": [
+    {
+      "name": "signops",
+      "resembles": "einops",
+      "first_seen": "2026-10-25T20:46:10Z"
+    },
     {
       "name": "qjobslib",
       "resembles": "joblib",
@@ -373,11 +378,6 @@
   ],
   "recent_sweeps": [
     {
-      "at": "2026-10-17T21:43:15Z",
-      "new": 40,
-      "lookalikes": 2
-    },
-    {
       "at": "2026-10-18T00:00:29Z",
       "new": 39,
       "lookalikes": 0
@@ -611,6 +611,11 @@
       "at": "2026-10-25T17:50:42Z",
       "new": 37,
       "lookalikes": 0
+    },
+    {
+      "at": "2026-10-25T20:46:10Z",
+      "new": 40,
+      "lookalikes": 1
     }
   ]
 }

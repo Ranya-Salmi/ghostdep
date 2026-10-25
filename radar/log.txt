@@ -227,3 +227,5 @@ Checked 40 new packages — no typosquats detected.
   stcode  resembles  qrcode
 === 2026-10-25T14:19:49Z === 40 new of 40 in feed; no lookalikes.
 === 2026-10-25T17:50:42Z === 37 new of 37 in feed; no lookalikes.
+=== 2026-10-25T20:46:10Z === 40 new of 40 in feed; 1 possible lookalike(s):
+  signops  resembles  einops

@@ -222,3 +222,6 @@ Checked 40 new packages — no typosquats detected.
 === 2026-10-25T05:15:42Z === 39 new of 39 in feed; 2 possible lookalike(s):
   s1ops  resembles  skops
   fsb-core  resembles  fastcore
+=== 2026-10-25T10:07:14Z === 40 new of 40 in feed; 2 possible lookalike(s):
+  qjobslib  resembles  joblib
+  stcode  resembles  qrcode

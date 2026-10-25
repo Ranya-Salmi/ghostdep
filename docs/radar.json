@@ -1,10 +1,25 @@
 {
-  "generated_at": "2026-10-25T20:46:10Z",
+  "generated_at": "2026-10-25T23:12:04Z",
   "first_sweep": "2026-09-26T18:42:37Z",
-  "last_sweep": "2026-10-25T20:46:10Z",
-  "sweeps": 153,
-  "packages_checked": 5861,
+  "last_sweep": "2026-10-25T23:12:04Z",
+  "sweeps": 154,
+  "packages_checked": 5901,
   "lookalikes": [
+    {
+      "name": "verdis",
+      "resembles": "redis",
+      "first_seen": "2026-10-25T23:12:04Z"
+    },
+    {
+      "name": "fastmace",
+      "resembles": "fastmcp",
+      "first_seen": "2026-10-25T23:12:04Z"
+    },
+    {
+      "name": "gglang",
+      "resembles": "sglang",
+      "first_seen": "2026-10-25T23:12:04Z"
+    },
     {
       "name": "signops",
       "resembles": "einops",
@@ -378,11 +393,6 @@
   ],
   "recent_sweeps": [
     {
-      "at": "2026-10-18T00:00:29Z",
-      "new": 39,
-      "lookalikes": 0
-    },
-    {
       "at": "2026-10-18T04:22:56Z",
       "new": 40,
       "lookalikes": 0
@@ -616,6 +626,11 @@
       "at": "2026-10-25T20:46:10Z",
       "new": 40,
       "lookalikes": 1
+    },
+    {
+      "at": "2026-10-25T23:12:04Z",
+      "new": 40,
+      "lookalikes": 3
     }
   ]
 }

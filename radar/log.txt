@@ -216,3 +216,6 @@ Checked 40 new packages — no typosquats detected.
   torch-lb  resembles  torch
 === 2026-10-24T21:51:41Z === 40 new of 40 in feed; 1 possible lookalike(s):
   ftask  resembles  flask
+=== 2026-10-25T00:17:47Z === 40 new of 40 in feed; 2 possible lookalike(s):
+  nadata  resembles  tzdata
+  spm-mcp  resembles  smmap

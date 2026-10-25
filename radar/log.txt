@@ -219,3 +219,6 @@ Checked 40 new packages — no typosquats detected.
 === 2026-10-25T00:17:47Z === 40 new of 40 in feed; 2 possible lookalike(s):
   nadata  resembles  tzdata
   spm-mcp  resembles  smmap
+=== 2026-10-25T05:15:42Z === 39 new of 39 in feed; 2 possible lookalike(s):
+  s1ops  resembles  skops
+  fsb-core  resembles  fastcore

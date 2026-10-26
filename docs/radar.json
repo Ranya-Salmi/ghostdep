@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-10-26T12:50:52Z",
+  "generated_at": "2026-10-26T19:13:51Z",
   "first_sweep": "2026-09-26T18:42:37Z",
-  "last_sweep": "2026-10-26T12:50:52Z",
-  "sweeps": 157,
-  "packages_checked": 6018,
+  "last_sweep": "2026-10-26T19:13:51Z",
+  "sweeps": 158,
+  "packages_checked": 6056,
   "lookalikes": [
     {
       "name": "ztest-runner",
@@ -398,11 +398,6 @@
   ],
   "recent_sweeps": [
     {
-      "at": "2026-10-18T16:52:17Z",
-      "new": 15,
-      "lookalikes": 0
-    },
-    {
       "at": "2026-10-18T19:24:34Z",
       "new": 39,
       "lookalikes": 0
@@ -635,6 +630,11 @@
     {
       "at": "2026-10-26T12:50:52Z",
       "new": 39,
+      "lookalikes": 0
+    },
+    {
+      "at": "2026-10-26T19:13:51Z",
+      "new": 38,
       "lookalikes": 0
     }
   ]

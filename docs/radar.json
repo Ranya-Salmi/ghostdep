@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-10-27T20:01:43Z",
+  "generated_at": "2026-10-27T23:43:38Z",
   "first_sweep": "2026-09-26T18:42:37Z",
-  "last_sweep": "2026-10-27T20:01:43Z",
-  "sweeps": 163,
-  "packages_checked": 6254,
+  "last_sweep": "2026-10-27T23:43:38Z",
+  "sweeps": 164,
+  "packages_checked": 6293,
   "lookalikes": [
     {
       "name": "xlformat",
@@ -408,11 +408,6 @@
   ],
   "recent_sweeps": [
     {
-      "at": "2026-10-19T17:08:56Z",
-      "new": 39,
-      "lookalikes": 1
-    },
-    {
       "at": "2026-10-19T21:29:45Z",
       "new": 39,
       "lookalikes": 0
@@ -646,6 +641,11 @@
       "at": "2026-10-27T20:01:43Z",
       "new": 40,
       "lookalikes": 1
+    },
+    {
+      "at": "2026-10-27T23:43:38Z",
+      "new": 39,
+      "lookalikes": 0
     }
   ]
 }

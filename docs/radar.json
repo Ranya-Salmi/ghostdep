@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-10-27T02:24:37Z",
+  "generated_at": "2026-10-27T08:21:17Z",
   "first_sweep": "2026-09-26T18:42:37Z",
-  "last_sweep": "2026-10-27T02:24:37Z",
-  "sweeps": 160,
-  "packages_checked": 6135,
+  "last_sweep": "2026-10-27T08:21:17Z",
+  "sweeps": 161,
+  "packages_checked": 6175,
   "lookalikes": [
     {
       "name": "crit-core",
@@ -403,11 +403,6 @@
   ],
   "recent_sweeps": [
     {
-      "at": "2026-10-19T00:11:40Z",
-      "new": 40,
-      "lookalikes": 0
-    },
-    {
       "at": "2026-10-19T04:37:20Z",
       "new": 40,
       "lookalikes": 1
@@ -640,6 +635,11 @@
     {
       "at": "2026-10-27T02:24:37Z",
       "new": 39,
+      "lookalikes": 0
+    },
+    {
+      "at": "2026-10-27T08:21:17Z",
+      "new": 40,
       "lookalikes": 0
     }
   ]

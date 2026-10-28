@@ -247,3 +247,4 @@ Checked 40 new packages — no typosquats detected.
   xlformat  resembles  nbformat
 === 2026-10-27T23:43:38Z === 39 new of 39 in feed; no lookalikes.
 === 2026-10-28T05:31:18Z === 40 new of 40 in feed; no lookalikes.
+=== 2026-10-28T11:36:22Z === 39 new of 39 in feed; no lookalikes.

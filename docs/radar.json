@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-10-28T21:53:46Z",
+  "generated_at": "2026-10-29T01:46:12Z",
   "first_sweep": "2026-09-26T18:42:37Z",
-  "last_sweep": "2026-10-28T21:53:46Z",
-  "sweeps": 168,
-  "packages_checked": 6449,
+  "last_sweep": "2026-10-29T01:46:12Z",
+  "sweeps": 169,
+  "packages_checked": 6489,
   "lookalikes": [
     {
       "name": "brieno",
@@ -413,11 +413,6 @@
   ],
   "recent_sweeps": [
     {
-      "at": "2026-10-20T15:21:21Z",
-      "new": 39,
-      "lookalikes": 0
-    },
-    {
       "at": "2026-10-20T19:33:53Z",
       "new": 38,
       "lookalikes": 0
@@ -651,6 +646,11 @@
       "at": "2026-10-28T21:53:46Z",
       "new": 37,
       "lookalikes": 1
+    },
+    {
+      "at": "2026-10-29T01:46:12Z",
+      "new": 40,
+      "lookalikes": 0
     }
   ]
 }

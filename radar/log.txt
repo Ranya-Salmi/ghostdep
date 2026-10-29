@@ -257,3 +257,5 @@ Checked 40 new packages — no typosquats detected.
   fastsp  resembles  fastapi
   pyropdf  resembles  pypdf
   openads  resembles  openai
+=== 2026-10-29T15:31:31Z === 26 new of 40 in feed; 1 possible lookalike(s):
+  kenning  resembles  keyring

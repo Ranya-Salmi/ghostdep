@@ -262,3 +262,6 @@ Checked 40 new packages — no typosquats detected.
 === 2026-10-29T20:33:39Z === 38 new of 38 in feed; 2 possible lookalike(s):
   s1flow  resembles  mlflow
   crs-lint  resembles  cfn-lint
+=== 2026-10-30T00:18:55Z === 39 new of 39 in feed; 2 possible lookalike(s):
+  cotorch  resembles  torch
+  uriloop  resembles  uvloop

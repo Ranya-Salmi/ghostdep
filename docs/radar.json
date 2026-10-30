@@ -1,10 +1,20 @@
 {
-  "generated_at": "2026-10-29T20:33:39Z",
+  "generated_at": "2026-10-30T00:18:55Z",
   "first_sweep": "2026-09-26T18:42:37Z",
-  "last_sweep": "2026-10-29T20:33:39Z",
-  "sweeps": 172,
-  "packages_checked": 6593,
+  "last_sweep": "2026-10-30T00:18:55Z",
+  "sweeps": 173,
+  "packages_checked": 6632,
   "lookalikes": [
+    {
+      "name": "cotorch",
+      "resembles": "torch",
+      "first_seen": "2026-10-30T00:18:55Z"
+    },
+    {
+      "name": "uriloop",
+      "resembles": "uvloop",
+      "first_seen": "2026-10-30T00:18:55Z"
+    },
     {
       "name": "s1flow",
       "resembles": "mlflow",
@@ -448,11 +458,6 @@
   ],
   "recent_sweeps": [
     {
-      "at": "2026-10-21T05:58:54Z",
-      "new": 39,
-      "lookalikes": 1
-    },
-    {
       "at": "2026-10-21T11:40:53Z",
       "new": 40,
       "lookalikes": 1
@@ -685,6 +690,11 @@
     {
       "at": "2026-10-29T20:33:39Z",
       "new": 38,
+      "lookalikes": 2
+    },
+    {
+      "at": "2026-10-30T00:18:55Z",
+      "new": 39,
       "lookalikes": 2
     }
   ]

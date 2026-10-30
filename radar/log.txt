@@ -271,3 +271,5 @@ Checked 40 new packages — no typosquats detected.
   itrace  resembles  ddtrace
   ftsdata  resembles  tzdata
 === 2026-10-30T18:49:35Z === 40 new of 40 in feed; no lookalikes.
+=== 2026-10-30T22:56:27Z === 40 new of 40 in feed; 1 possible lookalike(s):
+  fastro  resembles  distro

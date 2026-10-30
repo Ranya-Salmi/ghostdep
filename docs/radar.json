@@ -1,10 +1,15 @@
 {
-  "generated_at": "2026-10-30T00:18:55Z",
+  "generated_at": "2026-10-30T06:24:43Z",
   "first_sweep": "2026-09-26T18:42:37Z",
-  "last_sweep": "2026-10-30T00:18:55Z",
-  "sweeps": 173,
-  "packages_checked": 6632,
+  "last_sweep": "2026-10-30T06:24:43Z",
+  "sweeps": 174,
+  "packages_checked": 6672,
   "lookalikes": [
+    {
+      "name": "situne",
+      "resembles": "mistune",
+      "first_seen": "2026-10-30T06:24:43Z"
+    },
     {
       "name": "cotorch",
       "resembles": "torch",
@@ -458,11 +463,6 @@
   ],
   "recent_sweeps": [
     {
-      "at": "2026-10-21T11:40:53Z",
-      "new": 40,
-      "lookalikes": 1
-    },
-    {
       "at": "2026-10-21T16:06:14Z",
       "new": 40,
       "lookalikes": 0
@@ -696,6 +696,11 @@
       "at": "2026-10-30T00:18:55Z",
       "new": 39,
       "lookalikes": 2
+    },
+    {
+      "at": "2026-10-30T06:24:43Z",
+      "new": 40,
+      "lookalikes": 1
     }
   ]
 }

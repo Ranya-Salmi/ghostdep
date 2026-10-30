@@ -1,10 +1,20 @@
 {
-  "generated_at": "2026-10-30T06:24:43Z",
+  "generated_at": "2026-10-30T13:30:17Z",
   "first_sweep": "2026-09-26T18:42:37Z",
-  "last_sweep": "2026-10-30T06:24:43Z",
-  "sweeps": 174,
-  "packages_checked": 6672,
+  "last_sweep": "2026-10-30T13:30:17Z",
+  "sweeps": 175,
+  "packages_checked": 6711,
   "lookalikes": [
+    {
+      "name": "itrace",
+      "resembles": "ddtrace",
+      "first_seen": "2026-10-30T13:30:17Z"
+    },
+    {
+      "name": "ftsdata",
+      "resembles": "tzdata",
+      "first_seen": "2026-10-30T13:30:17Z"
+    },
     {
       "name": "situne",
       "resembles": "mistune",
@@ -463,11 +473,6 @@
   ],
   "recent_sweeps": [
     {
-      "at": "2026-10-21T16:06:14Z",
-      "new": 40,
-      "lookalikes": 0
-    },
-    {
       "at": "2026-10-21T20:06:09Z",
       "new": 40,
       "lookalikes": 1
@@ -701,6 +706,11 @@
       "at": "2026-10-30T06:24:43Z",
       "new": 40,
       "lookalikes": 1
+    },
+    {
+      "at": "2026-10-30T13:30:17Z",
+      "new": 39,
+      "lookalikes": 2
     }
   ]
 }

@@ -267,3 +267,6 @@ Checked 40 new packages — no typosquats detected.
   uriloop  resembles  uvloop
 === 2026-10-30T06:24:43Z === 40 new of 40 in feed; 1 possible lookalike(s):
   situne  resembles  mistune
+=== 2026-10-30T13:30:17Z === 39 new of 39 in feed; 2 possible lookalike(s):
+  itrace  resembles  ddtrace
+  ftsdata  resembles  tzdata

@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-10-30T13:30:17Z",
+  "generated_at": "2026-10-30T18:49:35Z",
   "first_sweep": "2026-09-26T18:42:37Z",
-  "last_sweep": "2026-10-30T13:30:17Z",
-  "sweeps": 175,
-  "packages_checked": 6711,
+  "last_sweep": "2026-10-30T18:49:35Z",
+  "sweeps": 176,
+  "packages_checked": 6751,
   "lookalikes": [
     {
       "name": "itrace",
@@ -473,11 +473,6 @@
   ],
   "recent_sweeps": [
     {
-      "at": "2026-10-21T20:06:09Z",
-      "new": 40,
-      "lookalikes": 1
-    },
-    {
       "at": "2026-10-21T23:14:31Z",
       "new": 40,
       "lookalikes": 0
@@ -711,6 +706,11 @@
       "at": "2026-10-30T13:30:17Z",
       "new": 39,
       "lookalikes": 2
+    },
+    {
+      "at": "2026-10-30T18:49:35Z",
+      "new": 40,
+      "lookalikes": 0
     }
   ]
 }

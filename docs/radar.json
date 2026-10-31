@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-10-31T02:17:37Z",
+  "generated_at": "2026-10-31T08:51:02Z",
   "first_sweep": "2026-09-26T18:42:37Z",
-  "last_sweep": "2026-10-31T02:17:37Z",
-  "sweeps": 178,
-  "packages_checked": 6829,
+  "last_sweep": "2026-10-31T08:51:02Z",
+  "sweeps": 179,
+  "packages_checked": 6868,
   "lookalikes": [
     {
       "name": "fastro",
@@ -478,11 +478,6 @@
   ],
   "recent_sweeps": [
     {
-      "at": "2026-10-22T07:29:48Z",
-      "new": 40,
-      "lookalikes": 1
-    },
-    {
       "at": "2026-10-22T13:11:15Z",
       "new": 40,
       "lookalikes": 2
@@ -715,6 +710,11 @@
     {
       "at": "2026-10-31T02:17:37Z",
       "new": 38,
+      "lookalikes": 0
+    },
+    {
+      "at": "2026-10-31T08:51:02Z",
+      "new": 39,
       "lookalikes": 0
     }
   ]

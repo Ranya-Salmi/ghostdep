@@ -275,3 +275,5 @@ Checked 40 new packages — no typosquats detected.
   fastro  resembles  distro
 === 2026-10-31T02:17:37Z === 38 new of 38 in feed; no lookalikes.
 === 2026-10-31T08:51:02Z === 39 new of 39 in feed; no lookalikes.
+=== 2026-10-31T15:17:13Z === 40 new of 40 in feed; 1 possible lookalike(s):
+  fastcmb  resembles  fastmcp

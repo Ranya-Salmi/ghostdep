@@ -285,3 +285,4 @@ Checked 40 new packages — no typosquats detected.
   imazeo  resembles  imageio
   olenji  resembles  openai
 === 2026-11-01T15:58:22Z === 39 new of 39 in feed; no lookalikes.
+=== 2026-11-01T20:27:50Z === 39 new of 39 in feed; no lookalikes.

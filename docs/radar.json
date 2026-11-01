@@ -1,10 +1,25 @@
 {
-  "generated_at": "2026-11-01T02:08:30Z",
+  "generated_at": "2026-11-01T09:08:38Z",
   "first_sweep": "2026-09-26T18:42:37Z",
-  "last_sweep": "2026-11-01T02:08:30Z",
-  "sweeps": 183,
-  "packages_checked": 7026,
+  "last_sweep": "2026-11-01T09:08:38Z",
+  "sweeps": 184,
+  "packages_checked": 7066,
   "lookalikes": [
+    {
+      "name": "attos",
+      "resembles": "attrs",
+      "first_seen": "2026-11-01T09:08:38Z"
+    },
+    {
+      "name": "imazeo",
+      "resembles": "imageio",
+      "first_seen": "2026-11-01T09:08:38Z"
+    },
+    {
+      "name": "olenji",
+      "resembles": "openai",
+      "first_seen": "2026-11-01T09:08:38Z"
+    },
     {
       "name": "fastcmb",
       "resembles": "fastmcp",
@@ -483,11 +498,6 @@
   ],
   "recent_sweeps": [
     {
-      "at": "2026-10-23T04:41:11Z",
-      "new": 39,
-      "lookalikes": 0
-    },
-    {
       "at": "2026-10-23T09:34:25Z",
       "new": 37,
       "lookalikes": 0
@@ -721,6 +731,11 @@
       "at": "2026-11-01T02:08:30Z",
       "new": 40,
       "lookalikes": 0
+    },
+    {
+      "at": "2026-11-01T09:08:38Z",
+      "new": 40,
+      "lookalikes": 3
     }
   ]
 }

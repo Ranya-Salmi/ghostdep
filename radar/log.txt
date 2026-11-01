@@ -284,3 +284,4 @@ Checked 40 new packages — no typosquats detected.
   attos  resembles  attrs
   imazeo  resembles  imageio
   olenji  resembles  openai
+=== 2026-11-01T15:58:22Z === 39 new of 39 in feed; no lookalikes.

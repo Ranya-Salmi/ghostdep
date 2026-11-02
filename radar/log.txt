@@ -287,3 +287,6 @@ Checked 40 new packages — no typosquats detected.
 === 2026-11-01T15:58:22Z === 39 new of 39 in feed; no lookalikes.
 === 2026-11-01T20:27:50Z === 39 new of 39 in feed; no lookalikes.
 === 2026-11-01T23:52:48Z === 39 new of 39 in feed; no lookalikes.
+=== 2026-11-02T05:54:22Z === 40 new of 40 in feed; 2 possible lookalike(s):
+  gnbuild  resembles  build
+  ninada  resembles  ninja

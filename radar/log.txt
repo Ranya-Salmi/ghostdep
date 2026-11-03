@@ -293,3 +293,5 @@ Checked 40 new packages — no typosquats detected.
 === 2026-11-02T15:39:30Z === 39 new of 39 in feed; 1 possible lookalike(s):
   ttnumpy  resembles  numpy
 === 2026-11-02T23:12:31Z === 39 new of 39 in feed; no lookalikes.
+=== 2026-11-03T03:55:49Z === 40 new of 40 in feed; 1 possible lookalike(s):
+  hscode  resembles  qrcode

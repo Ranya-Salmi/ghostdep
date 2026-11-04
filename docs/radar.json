@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-04T14:51:23Z",
+  "generated_at": "2026-11-04T21:16:01Z",
   "first_sweep": "2026-09-26T18:42:37Z",
-  "last_sweep": "2026-11-04T14:51:23Z",
-  "sweeps": 196,
-  "packages_checked": 7539,
+  "last_sweep": "2026-11-04T21:16:01Z",
+  "sweeps": 197,
+  "packages_checked": 7578,
   "lookalikes": [
     {
       "name": "identific",
@@ -543,11 +543,6 @@
   ],
   "recent_sweeps": [
     {
-      "at": "2026-10-25T05:15:42Z",
-      "new": 39,
-      "lookalikes": 2
-    },
-    {
       "at": "2026-10-25T10:07:14Z",
       "new": 40,
       "lookalikes": 2
@@ -781,6 +776,11 @@
       "at": "2026-11-04T14:51:23Z",
       "new": 40,
       "lookalikes": 1
+    },
+    {
+      "at": "2026-11-04T21:16:01Z",
+      "new": 39,
+      "lookalikes": 0
     }
   ]
 }

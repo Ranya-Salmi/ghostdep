@@ -1,10 +1,15 @@
 {
-  "generated_at": "2026-11-04T06:13:39Z",
+  "generated_at": "2026-11-04T14:51:23Z",
   "first_sweep": "2026-09-26T18:42:37Z",
-  "last_sweep": "2026-11-04T06:13:39Z",
-  "sweeps": 195,
-  "packages_checked": 7499,
+  "last_sweep": "2026-11-04T14:51:23Z",
+  "sweeps": 196,
+  "packages_checked": 7539,
   "lookalikes": [
+    {
+      "name": "identific",
+      "resembles": "identify",
+      "first_seen": "2026-11-04T14:51:23Z"
+    },
     {
       "name": "tb_trino",
       "resembles": "trino",
@@ -538,11 +543,6 @@
   ],
   "recent_sweeps": [
     {
-      "at": "2026-10-25T00:17:47Z",
-      "new": 40,
-      "lookalikes": 2
-    },
-    {
       "at": "2026-10-25T05:15:42Z",
       "new": 39,
       "lookalikes": 2
@@ -776,6 +776,11 @@
       "at": "2026-11-04T06:13:39Z",
       "new": 39,
       "lookalikes": 2
+    },
+    {
+      "at": "2026-11-04T14:51:23Z",
+      "new": 40,
+      "lookalikes": 1
     }
   ]
 }

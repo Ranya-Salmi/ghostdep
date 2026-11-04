@@ -298,3 +298,5 @@ Checked 40 new packages — no typosquats detected.
 === 2026-11-03T11:51:37Z === 40 new of 40 in feed; 1 possible lookalike(s):
   sitoolz  resembles  toolz
 === 2026-11-03T19:27:42Z === 40 new of 40 in feed; no lookalikes.
+=== 2026-11-04T00:11:36Z === 39 new of 39 in feed; 1 possible lookalike(s):
+  nomba  resembles  numba

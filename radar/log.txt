@@ -311,3 +311,5 @@ Checked 40 new packages — no typosquats detected.
   fannar  resembles  fastar
 === 2026-11-05T17:37:26Z === 38 new of 38 in feed; 1 possible lookalike(s):
   metalake  resembles  deltalake
+=== 2026-11-05T22:49:37Z === 35 new of 35 in feed; 1 possible lookalike(s):
+  dgc-core  resembles  dbt-core

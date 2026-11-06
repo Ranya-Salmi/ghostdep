@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-06T03:23:05Z",
+  "generated_at": "2026-11-06T11:27:16Z",
   "first_sweep": "2026-09-26T18:42:37Z",
-  "last_sweep": "2026-11-06T03:23:05Z",
-  "sweeps": 202,
-  "packages_checked": 7769,
+  "last_sweep": "2026-11-06T11:27:16Z",
+  "sweeps": 203,
+  "packages_checked": 7808,
   "lookalikes": [
     {
       "name": "dgc-core",
@@ -558,11 +558,6 @@
   ],
   "recent_sweeps": [
     {
-      "at": "2026-10-26T01:08:24Z",
-      "new": 39,
-      "lookalikes": 0
-    },
-    {
       "at": "2026-10-26T06:06:03Z",
       "new": 39,
       "lookalikes": 1
@@ -794,6 +789,11 @@
     },
     {
       "at": "2026-11-06T03:23:05Z",
+      "new": 39,
+      "lookalikes": 0
+    },
+    {
+      "at": "2026-11-06T11:27:16Z",
       "new": 39,
       "lookalikes": 0
     }

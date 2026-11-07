@@ -322,3 +322,8 @@ Checked 40 new packages — no typosquats detected.
 === 2026-11-07T03:11:29Z === 39 new of 39 in feed; 1 possible lookalike(s):
   hilt-core  resembles  flit-core
 === 2026-11-07T10:01:36Z === 40 new of 40 in feed; no lookalikes.
+=== 2026-11-07T16:22:34Z === 40 new of 40 in feed; 4 possible lookalike(s):
+  envref  resembles  envier
+  scheda  resembles  schema
+  pysipl  resembles  py-spy
+  sdflow  resembles  mlflow

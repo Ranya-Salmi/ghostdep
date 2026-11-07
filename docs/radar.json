@@ -1,10 +1,25 @@
 {
-  "generated_at": "2026-11-07T20:29:02Z",
+  "generated_at": "2026-11-07T23:56:10Z",
   "first_sweep": "2026-09-26T18:42:37Z",
-  "last_sweep": "2026-11-07T20:29:02Z",
-  "sweeps": 209,
-  "packages_checked": 8047,
+  "last_sweep": "2026-11-07T23:56:10Z",
+  "sweeps": 210,
+  "packages_checked": 8086,
   "lookalikes": [
+    {
+      "name": "twindex",
+      "resembles": "twine",
+      "first_seen": "2026-11-07T23:56:10Z"
+    },
+    {
+      "name": "torchvisir",
+      "resembles": "torchvision",
+      "first_seen": "2026-11-07T23:56:10Z"
+    },
+    {
+      "name": "pyrind",
+      "resembles": "pylint",
+      "first_seen": "2026-11-07T23:56:10Z"
+    },
     {
       "name": "envref",
       "resembles": "envier",
@@ -593,11 +608,6 @@
   ],
   "recent_sweeps": [
     {
-      "at": "2026-10-27T14:53:31Z",
-      "new": 39,
-      "lookalikes": 0
-    },
-    {
       "at": "2026-10-27T20:01:43Z",
       "new": 40,
       "lookalikes": 1
@@ -831,6 +841,11 @@
       "at": "2026-11-07T20:29:02Z",
       "new": 40,
       "lookalikes": 0
+    },
+    {
+      "at": "2026-11-07T23:56:10Z",
+      "new": 39,
+      "lookalikes": 3
     }
   ]
 }

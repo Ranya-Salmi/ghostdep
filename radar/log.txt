@@ -319,3 +319,5 @@ Checked 40 new packages — no typosquats detected.
   docmatch  resembles  wcmatch
   labplotlib  resembles  matplotlib
 === 2026-11-06T23:29:39Z === 40 new of 40 in feed; no lookalikes.
+=== 2026-11-07T03:11:29Z === 39 new of 39 in feed; 1 possible lookalike(s):
+  hilt-core  resembles  flit-core

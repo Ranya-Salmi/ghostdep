@@ -1,10 +1,15 @@
 {
-  "generated_at": "2026-11-06T23:29:39Z",
+  "generated_at": "2026-11-07T03:11:29Z",
   "first_sweep": "2026-09-26T18:42:37Z",
-  "last_sweep": "2026-11-06T23:29:39Z",
-  "sweeps": 205,
-  "packages_checked": 7888,
+  "last_sweep": "2026-11-07T03:11:29Z",
+  "sweeps": 206,
+  "packages_checked": 7927,
   "lookalikes": [
+    {
+      "name": "hilt-core",
+      "resembles": "flit-core",
+      "first_seen": "2026-11-07T03:11:29Z"
+    },
     {
       "name": "docmatch",
       "resembles": "wcmatch",
@@ -568,11 +573,6 @@
   ],
   "recent_sweeps": [
     {
-      "at": "2026-10-26T19:13:51Z",
-      "new": 38,
-      "lookalikes": 0
-    },
-    {
       "at": "2026-10-26T23:18:51Z",
       "new": 40,
       "lookalikes": 1
@@ -806,6 +806,11 @@
       "at": "2026-11-06T23:29:39Z",
       "new": 40,
       "lookalikes": 0
+    },
+    {
+      "at": "2026-11-07T03:11:29Z",
+      "new": 39,
+      "lookalikes": 1
     }
   ]
 }

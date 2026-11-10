@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-10T10:25:05Z",
+  "generated_at": "2026-11-10T18:13:38Z",
   "first_sweep": "2026-09-26T18:42:37Z",
-  "last_sweep": "2026-11-10T10:25:05Z",
-  "sweeps": 219,
-  "packages_checked": 8436,
+  "last_sweep": "2026-11-10T18:13:38Z",
+  "sweeps": 220,
+  "packages_checked": 8476,
   "lookalikes": [
     {
       "name": "dry-lint",
@@ -613,11 +613,6 @@
   ],
   "recent_sweeps": [
     {
-      "at": "2026-10-29T20:33:39Z",
-      "new": 38,
-      "lookalikes": 2
-    },
-    {
       "at": "2026-10-30T00:18:55Z",
       "new": 39,
       "lookalikes": 2
@@ -849,6 +844,11 @@
     },
     {
       "at": "2026-11-10T10:25:05Z",
+      "new": 40,
+      "lookalikes": 0
+    },
+    {
+      "at": "2026-11-10T18:13:38Z",
       "new": 40,
       "lookalikes": 0
     }

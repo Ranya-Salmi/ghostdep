@@ -348,3 +348,5 @@ Checked 40 new packages — no typosquats detected.
 === 2026-11-11T10:47:29Z === 40 new of 40 in feed; 1 possible lookalike(s):
   gglint  resembles  pylint
 === 2026-11-11T18:38:25Z === 39 new of 39 in feed; no lookalikes.
+=== 2026-11-12T00:58:46Z === 36 new of 36 in feed; 1 possible lookalike(s):
+  ovicore  resembles  uvicorn

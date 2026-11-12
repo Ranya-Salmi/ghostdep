@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-12T08:14:39Z",
+  "generated_at": "2026-11-12T17:03:04Z",
   "first_sweep": "2026-09-26T18:42:37Z",
-  "last_sweep": "2026-11-12T08:14:39Z",
-  "sweeps": 226,
-  "packages_checked": 8711,
+  "last_sweep": "2026-11-12T17:03:04Z",
+  "sweeps": 227,
+  "packages_checked": 8751,
   "lookalikes": [
     {
       "name": "ovicore",
@@ -623,11 +623,6 @@
   ],
   "recent_sweeps": [
     {
-      "at": "2026-10-31T08:51:02Z",
-      "new": 39,
-      "lookalikes": 0
-    },
-    {
       "at": "2026-10-31T15:17:13Z",
       "new": 40,
       "lookalikes": 1
@@ -859,6 +854,11 @@
     },
     {
       "at": "2026-11-12T08:14:39Z",
+      "new": 40,
+      "lookalikes": 0
+    },
+    {
+      "at": "2026-11-12T17:03:04Z",
       "new": 40,
       "lookalikes": 0
     }

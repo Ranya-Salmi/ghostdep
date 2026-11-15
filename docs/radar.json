@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-15T09:52:59Z",
+  "generated_at": "2026-11-15T17:01:39Z",
   "first_sweep": "2026-09-26T18:42:37Z",
-  "last_sweep": "2026-11-15T09:52:59Z",
-  "sweeps": 238,
-  "packages_checked": 9184,
+  "last_sweep": "2026-11-15T17:01:39Z",
+  "sweeps": 239,
+  "packages_checked": 9224,
   "lookalikes": [
     {
       "name": "simaudit",
@@ -643,11 +643,6 @@
   ],
   "recent_sweeps": [
     {
-      "at": "2026-11-03T03:55:49Z",
-      "new": 40,
-      "lookalikes": 1
-    },
-    {
       "at": "2026-11-03T11:51:37Z",
       "new": 40,
       "lookalikes": 1
@@ -880,6 +875,11 @@
     {
       "at": "2026-11-15T09:52:59Z",
       "new": 39,
+      "lookalikes": 0
+    },
+    {
+      "at": "2026-11-15T17:01:39Z",
+      "new": 40,
       "lookalikes": 0
     }
   ]

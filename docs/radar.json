@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-17T02:53:48Z",
+  "generated_at": "2026-11-17T11:43:41Z",
   "first_sweep": "2026-09-26T18:42:37Z",
-  "last_sweep": "2026-11-17T02:53:48Z",
-  "sweeps": 244,
-  "packages_checked": 9423,
+  "last_sweep": "2026-11-17T11:43:41Z",
+  "sweeps": 245,
+  "packages_checked": 9462,
   "lookalikes": [
     {
       "name": "sanadb",
@@ -648,11 +648,6 @@
   ],
   "recent_sweeps": [
     {
-      "at": "2026-11-04T21:16:01Z",
-      "new": 39,
-      "lookalikes": 0
-    },
-    {
       "at": "2026-11-05T01:45:57Z",
       "new": 40,
       "lookalikes": 0
@@ -885,6 +880,11 @@
     {
       "at": "2026-11-17T02:53:48Z",
       "new": 40,
+      "lookalikes": 0
+    },
+    {
+      "at": "2026-11-17T11:43:41Z",
+      "new": 39,
       "lookalikes": 0
     }
   ]

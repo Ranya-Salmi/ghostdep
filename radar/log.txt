@@ -376,3 +376,5 @@ Checked 40 new packages — no typosquats detected.
 === 2026-11-17T02:53:48Z === 40 new of 40 in feed; no lookalikes.
 === 2026-11-17T11:43:41Z === 39 new of 39 in feed; no lookalikes.
 === 2026-11-17T20:48:49Z === 38 new of 38 in feed; no lookalikes.
+=== 2026-11-18T02:51:43Z === 40 new of 40 in feed; 1 possible lookalike(s):
+  segger  resembles  semver

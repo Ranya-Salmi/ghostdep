@@ -1,10 +1,15 @@
 {
-  "generated_at": "2026-11-17T20:48:49Z",
+  "generated_at": "2026-11-18T02:51:43Z",
   "first_sweep": "2026-09-26T18:42:37Z",
-  "last_sweep": "2026-11-17T20:48:49Z",
-  "sweeps": 246,
-  "packages_checked": 9500,
+  "last_sweep": "2026-11-18T02:51:43Z",
+  "sweeps": 247,
+  "packages_checked": 9540,
   "lookalikes": [
+    {
+      "name": "segger",
+      "resembles": "semver",
+      "first_seen": "2026-11-18T02:51:43Z"
+    },
     {
       "name": "sanadb",
       "resembles": "wandb",
@@ -648,11 +653,6 @@
   ],
   "recent_sweeps": [
     {
-      "at": "2026-11-05T09:23:52Z",
-      "new": 39,
-      "lookalikes": 1
-    },
-    {
       "at": "2026-11-05T17:37:26Z",
       "new": 38,
       "lookalikes": 1
@@ -886,6 +886,11 @@
       "at": "2026-11-17T20:48:49Z",
       "new": 38,
       "lookalikes": 0
+    },
+    {
+      "at": "2026-11-18T02:51:43Z",
+      "new": 40,
+      "lookalikes": 1
     }
   ]
 }

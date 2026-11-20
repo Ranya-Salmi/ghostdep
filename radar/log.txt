@@ -387,3 +387,4 @@ Checked 40 new packages — no typosquats detected.
   s4ever  resembles  semver
 === 2026-11-20T00:54:45Z === 40 new of 40 in feed; 1 possible lookalike(s):
   cnamio  resembles  caio
+=== 2026-11-20T08:28:32Z === 38 new of 39 in feed; no lookalikes.

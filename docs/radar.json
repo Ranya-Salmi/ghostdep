@@ -1,10 +1,15 @@
 {
-  "generated_at": "2026-11-19T18:38:35Z",
+  "generated_at": "2026-11-20T00:54:45Z",
   "first_sweep": "2026-09-26T18:42:37Z",
-  "last_sweep": "2026-11-19T18:38:35Z",
-  "sweeps": 252,
-  "packages_checked": 9738,
+  "last_sweep": "2026-11-20T00:54:45Z",
+  "sweeps": 253,
+  "packages_checked": 9778,
   "lookalikes": [
+    {
+      "name": "cnamio",
+      "resembles": "caio",
+      "first_seen": "2026-11-20T00:54:45Z"
+    },
     {
       "name": "s4ever",
       "resembles": "semver",
@@ -663,11 +668,6 @@
   ],
   "recent_sweeps": [
     {
-      "at": "2026-11-06T23:29:39Z",
-      "new": 40,
-      "lookalikes": 0
-    },
-    {
       "at": "2026-11-07T03:11:29Z",
       "new": 39,
       "lookalikes": 1
@@ -900,6 +900,11 @@
     {
       "at": "2026-11-19T18:38:35Z",
       "new": 39,
+      "lookalikes": 1
+    },
+    {
+      "at": "2026-11-20T00:54:45Z",
+      "new": 40,
       "lookalikes": 1
     }
   ]

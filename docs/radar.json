@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-21T04:15:34Z",
+  "generated_at": "2026-11-21T12:58:58Z",
   "first_sweep": "2026-09-26T18:42:37Z",
-  "last_sweep": "2026-11-21T04:15:34Z",
-  "sweeps": 257,
-  "packages_checked": 9933,
+  "last_sweep": "2026-11-21T12:58:58Z",
+  "sweeps": 258,
+  "packages_checked": 9973,
   "lookalikes": [
     {
       "name": "seminer",
@@ -673,11 +673,6 @@
   ],
   "recent_sweeps": [
     {
-      "at": "2026-11-07T23:56:10Z",
-      "new": 39,
-      "lookalikes": 3
-    },
-    {
       "at": "2026-11-08T05:53:46Z",
       "new": 34,
       "lookalikes": 0
@@ -910,6 +905,11 @@
     {
       "at": "2026-11-21T04:15:34Z",
       "new": 39,
+      "lookalikes": 0
+    },
+    {
+      "at": "2026-11-21T12:58:58Z",
+      "new": 40,
       "lookalikes": 0
     }
   ]

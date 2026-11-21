@@ -391,3 +391,4 @@ Checked 40 new packages — no typosquats detected.
 === 2026-11-20T17:14:41Z === 39 new of 39 in feed; 1 possible lookalike(s):
   seminer  resembles  semver
 === 2026-11-20T23:19:37Z === 39 new of 39 in feed; no lookalikes.
+=== 2026-11-21T04:15:34Z === 39 new of 39 in feed; no lookalikes.

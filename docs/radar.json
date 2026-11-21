@@ -1,10 +1,15 @@
 {
-  "generated_at": "2026-11-21T12:58:58Z",
+  "generated_at": "2026-11-21T20:03:24Z",
   "first_sweep": "2026-09-26T18:42:37Z",
-  "last_sweep": "2026-11-21T12:58:58Z",
-  "sweeps": 258,
-  "packages_checked": 9973,
+  "last_sweep": "2026-11-21T20:03:24Z",
+  "sweeps": 259,
+  "packages_checked": 10011,
   "lookalikes": [
+    {
+      "name": "bhtypes",
+      "resembles": "db-dtypes",
+      "first_seen": "2026-11-21T20:03:24Z"
+    },
     {
       "name": "seminer",
       "resembles": "semver",
@@ -673,11 +678,6 @@
   ],
   "recent_sweeps": [
     {
-      "at": "2026-11-08T05:53:46Z",
-      "new": 34,
-      "lookalikes": 0
-    },
-    {
       "at": "2026-11-08T13:15:20Z",
       "new": 39,
       "lookalikes": 1
@@ -911,6 +911,11 @@
       "at": "2026-11-21T12:58:58Z",
       "new": 40,
       "lookalikes": 0
+    },
+    {
+      "at": "2026-11-21T20:03:24Z",
+      "new": 38,
+      "lookalikes": 1
     }
   ]
 }

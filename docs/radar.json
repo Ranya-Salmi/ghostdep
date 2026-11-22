@@ -1,10 +1,15 @@
 {
-  "generated_at": "2026-11-21T20:03:24Z",
+  "generated_at": "2026-11-22T00:18:24Z",
   "first_sweep": "2026-09-26T18:42:37Z",
-  "last_sweep": "2026-11-21T20:03:24Z",
-  "sweeps": 259,
-  "packages_checked": 10011,
+  "last_sweep": "2026-11-22T00:18:24Z",
+  "sweeps": 260,
+  "packages_checked": 10051,
   "lookalikes": [
+    {
+      "name": "pykitt",
+      "resembles": "pylint",
+      "first_seen": "2026-11-22T00:18:24Z"
+    },
     {
       "name": "bhtypes",
       "resembles": "db-dtypes",
@@ -678,11 +683,6 @@
   ],
   "recent_sweeps": [
     {
-      "at": "2026-11-08T13:15:20Z",
-      "new": 39,
-      "lookalikes": 1
-    },
-    {
       "at": "2026-11-08T18:29:24Z",
       "new": 39,
       "lookalikes": 0
@@ -915,6 +915,11 @@
     {
       "at": "2026-11-21T20:03:24Z",
       "new": 38,
+      "lookalikes": 1
+    },
+    {
+      "at": "2026-11-22T00:18:24Z",
+      "new": 40,
       "lookalikes": 1
     }
   ]

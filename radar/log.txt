@@ -402,3 +402,4 @@ Checked 40 new packages — no typosquats detected.
   fidetype  resembles  filetype
   opencr  resembles  openai
 === 2026-11-22T15:39:07Z === 39 new of 39 in feed; no lookalikes.
+=== 2026-11-22T21:15:08Z === 39 new of 39 in feed; no lookalikes.

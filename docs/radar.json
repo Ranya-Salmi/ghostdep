@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-22T07:25:26Z",
+  "generated_at": "2026-11-22T15:39:07Z",
   "first_sweep": "2026-09-26T18:42:37Z",
-  "last_sweep": "2026-11-22T07:25:26Z",
-  "sweeps": 261,
-  "packages_checked": 10091,
+  "last_sweep": "2026-11-22T15:39:07Z",
+  "sweeps": 262,
+  "packages_checked": 10130,
   "lookalikes": [
     {
       "name": "qrpack",
@@ -698,11 +698,6 @@
   ],
   "recent_sweeps": [
     {
-      "at": "2026-11-08T22:27:43Z",
-      "new": 38,
-      "lookalikes": 0
-    },
-    {
       "at": "2026-11-09T01:56:52Z",
       "new": 40,
       "lookalikes": 0
@@ -936,6 +931,11 @@
       "at": "2026-11-22T07:25:26Z",
       "new": 40,
       "lookalikes": 3
+    },
+    {
+      "at": "2026-11-22T15:39:07Z",
+      "new": 39,
+      "lookalikes": 0
     }
   ]
 }

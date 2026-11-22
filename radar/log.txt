@@ -397,3 +397,7 @@ Checked 40 new packages — no typosquats detected.
   bhtypes  resembles  db-dtypes
 === 2026-11-22T00:18:24Z === 40 new of 40 in feed; 1 possible lookalike(s):
   pykitt  resembles  pylint
+=== 2026-11-22T07:25:26Z === 40 new of 40 in feed; 3 possible lookalike(s):
+  qrpack  resembles  hpack
+  fidetype  resembles  filetype
+  opencr  resembles  openai

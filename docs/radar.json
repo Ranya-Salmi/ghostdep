@@ -1,10 +1,25 @@
 {
-  "generated_at": "2026-11-22T00:18:24Z",
+  "generated_at": "2026-11-22T07:25:26Z",
   "first_sweep": "2026-09-26T18:42:37Z",
-  "last_sweep": "2026-11-22T00:18:24Z",
-  "sweeps": 260,
-  "packages_checked": 10051,
+  "last_sweep": "2026-11-22T07:25:26Z",
+  "sweeps": 261,
+  "packages_checked": 10091,
   "lookalikes": [
+    {
+      "name": "qrpack",
+      "resembles": "hpack",
+      "first_seen": "2026-11-22T07:25:26Z"
+    },
+    {
+      "name": "fidetype",
+      "resembles": "filetype",
+      "first_seen": "2026-11-22T07:25:26Z"
+    },
+    {
+      "name": "opencr",
+      "resembles": "openai",
+      "first_seen": "2026-11-22T07:25:26Z"
+    },
     {
       "name": "pykitt",
       "resembles": "pylint",
@@ -683,11 +698,6 @@
   ],
   "recent_sweeps": [
     {
-      "at": "2026-11-08T18:29:24Z",
-      "new": 39,
-      "lookalikes": 0
-    },
-    {
       "at": "2026-11-08T22:27:43Z",
       "new": 38,
       "lookalikes": 0
@@ -921,6 +931,11 @@
       "at": "2026-11-22T00:18:24Z",
       "new": 40,
       "lookalikes": 1
+    },
+    {
+      "at": "2026-11-22T07:25:26Z",
+      "new": 40,
+      "lookalikes": 3
     }
   ]
 }

@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-23T01:57:36Z",
+  "generated_at": "2026-11-23T10:40:17Z",
   "first_sweep": "2026-09-26T18:42:37Z",
-  "last_sweep": "2026-11-23T01:57:36Z",
-  "sweeps": 264,
-  "packages_checked": 10208,
+  "last_sweep": "2026-11-23T10:40:17Z",
+  "sweeps": 265,
+  "packages_checked": 10248,
   "lookalikes": [
     {
       "name": "lyx-test",
@@ -703,11 +703,6 @@
   ],
   "recent_sweeps": [
     {
-      "at": "2026-11-09T20:05:28Z",
-      "new": 40,
-      "lookalikes": 0
-    },
-    {
       "at": "2026-11-10T02:41:03Z",
       "new": 40,
       "lookalikes": 0
@@ -941,6 +936,11 @@
       "at": "2026-11-23T01:57:36Z",
       "new": 39,
       "lookalikes": 1
+    },
+    {
+      "at": "2026-11-23T10:40:17Z",
+      "new": 40,
+      "lookalikes": 0
     }
   ]
 }

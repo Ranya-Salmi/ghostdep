@@ -403,3 +403,5 @@ Checked 40 new packages — no typosquats detected.
   opencr  resembles  openai
 === 2026-11-22T15:39:07Z === 39 new of 39 in feed; no lookalikes.
 === 2026-11-22T21:15:08Z === 39 new of 39 in feed; no lookalikes.
+=== 2026-11-23T01:57:36Z === 39 new of 39 in feed; 1 possible lookalike(s):
+  lyx-test  resembles  pytest

@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-24T17:34:05Z",
+  "generated_at": "2026-11-25T01:34:59Z",
   "first_sweep": "2026-09-26T18:42:37Z",
-  "last_sweep": "2026-11-24T17:34:05Z",
-  "sweeps": 268,
-  "packages_checked": 10367,
+  "last_sweep": "2026-11-25T01:34:59Z",
+  "sweeps": 269,
+  "packages_checked": 10406,
   "lookalikes": [
     {
       "name": "openif",
@@ -713,11 +713,6 @@
   ],
   "recent_sweeps": [
     {
-      "at": "2026-11-10T23:42:10Z",
-      "new": 40,
-      "lookalikes": 0
-    },
-    {
       "at": "2026-11-11T03:01:47Z",
       "new": 40,
       "lookalikes": 0
@@ -951,6 +946,11 @@
       "at": "2026-11-24T17:34:05Z",
       "new": 40,
       "lookalikes": 2
+    },
+    {
+      "at": "2026-11-25T01:34:59Z",
+      "new": 39,
+      "lookalikes": 0
     }
   ]
 }

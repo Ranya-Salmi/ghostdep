@@ -411,3 +411,4 @@ Checked 40 new packages — no typosquats detected.
 === 2026-11-24T17:34:05Z === 40 new of 40 in feed; 2 possible lookalike(s):
   openif  resembles  openai
   ol-notebook  resembles  notebook
+=== 2026-11-25T01:34:59Z === 39 new of 39 in feed; no lookalikes.

@@ -1,10 +1,25 @@
 {
-  "generated_at": "2026-11-26T02:47:57Z",
+  "generated_at": "2026-11-26T12:17:02Z",
   "first_sweep": "2026-09-26T18:42:37Z",
-  "last_sweep": "2026-11-26T02:47:57Z",
-  "sweeps": 272,
-  "packages_checked": 10525,
+  "last_sweep": "2026-11-26T12:17:02Z",
+  "sweeps": 273,
+  "packages_checked": 10565,
   "lookalikes": [
+    {
+      "name": "r3trace",
+      "resembles": "ddtrace",
+      "first_seen": "2026-11-26T12:17:02Z"
+    },
+    {
+      "name": "wiaudit",
+      "resembles": "pip-audit",
+      "first_seen": "2026-11-26T12:17:02Z"
+    },
+    {
+      "name": "chartlet",
+      "resembles": "chardet",
+      "first_seen": "2026-11-26T12:17:02Z"
+    },
     {
       "name": "openif",
       "resembles": "openai",
@@ -713,11 +728,6 @@
   ],
   "recent_sweeps": [
     {
-      "at": "2026-11-12T00:58:46Z",
-      "new": 36,
-      "lookalikes": 1
-    },
-    {
       "at": "2026-11-12T08:14:39Z",
       "new": 40,
       "lookalikes": 0
@@ -951,6 +961,11 @@
       "at": "2026-11-26T02:47:57Z",
       "new": 40,
       "lookalikes": 0
+    },
+    {
+      "at": "2026-11-26T12:17:02Z",
+      "new": 40,
+      "lookalikes": 3
     }
   ]
 }

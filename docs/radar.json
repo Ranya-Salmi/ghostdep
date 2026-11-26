@@ -1,10 +1,15 @@
 {
-  "generated_at": "2026-11-26T12:17:02Z",
+  "generated_at": "2026-11-26T21:54:00Z",
   "first_sweep": "2026-09-26T18:42:37Z",
-  "last_sweep": "2026-11-26T12:17:02Z",
-  "sweeps": 273,
-  "packages_checked": 10565,
+  "last_sweep": "2026-11-26T21:54:00Z",
+  "sweeps": 274,
+  "packages_checked": 10605,
   "lookalikes": [
+    {
+      "name": "pancite",
+      "resembles": "dacite",
+      "first_seen": "2026-11-26T21:54:00Z"
+    },
     {
       "name": "r3trace",
       "resembles": "ddtrace",
@@ -728,11 +733,6 @@
   ],
   "recent_sweeps": [
     {
-      "at": "2026-11-12T08:14:39Z",
-      "new": 40,
-      "lookalikes": 0
-    },
-    {
       "at": "2026-11-12T17:03:04Z",
       "new": 40,
       "lookalikes": 0
@@ -966,6 +966,11 @@
       "at": "2026-11-26T12:17:02Z",
       "new": 40,
       "lookalikes": 3
+    },
+    {
+      "at": "2026-11-26T21:54:00Z",
+      "new": 40,
+      "lookalikes": 1
     }
   ]
 }

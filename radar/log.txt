@@ -419,3 +419,5 @@ Checked 40 new packages — no typosquats detected.
   r3trace  resembles  ddtrace
   wiaudit  resembles  pip-audit
   chartlet  resembles  chardet
+=== 2026-11-26T21:54:00Z === 40 new of 40 in feed; 1 possible lookalike(s):
+  pancite  resembles  dacite

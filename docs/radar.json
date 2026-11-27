@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-26T21:54:00Z",
+  "generated_at": "2026-11-27T04:11:52Z",
   "first_sweep": "2026-09-26T18:42:37Z",
-  "last_sweep": "2026-11-26T21:54:00Z",
-  "sweeps": 274,
-  "packages_checked": 10605,
+  "last_sweep": "2026-11-27T04:11:52Z",
+  "sweeps": 275,
+  "packages_checked": 10644,
   "lookalikes": [
     {
       "name": "pancite",
@@ -733,11 +733,6 @@
   ],
   "recent_sweeps": [
     {
-      "at": "2026-11-12T17:03:04Z",
-      "new": 40,
-      "lookalikes": 0
-    },
-    {
       "at": "2026-11-12T22:41:48Z",
       "new": 38,
       "lookalikes": 0
@@ -971,6 +966,11 @@
       "at": "2026-11-26T21:54:00Z",
       "new": 40,
       "lookalikes": 1
+    },
+    {
+      "at": "2026-11-27T04:11:52Z",
+      "new": 39,
+      "lookalikes": 0
     }
   ]
 }
